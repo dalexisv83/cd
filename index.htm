@@ -1,0 +1,40 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <title>Cabling Diagram</title>
+    <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/angular.js"></script>
+    <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/jquery.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="class/class.js"></script>
+    <script type="text/javascript" src="data/data.js"></script>
+</head>
+
+<body ng-app="cablingDiagram">
+    <div ng-controller="cablingDiagramController">
+        <ul>
+            <li class="no-decoration">
+                <label>
+                    <input type="checkbox" checked disabled />TV
+                </label>
+            </li>
+            <li class="no-decoration">
+                <label>
+                    <input type="checkbox" checked disabled />Receiver
+                </label>
+            </li>
+            <li class="no-decoration" ng-repeat="tech in connectionArray">
+                <label>
+                    <input type="checkbox" ng-model="tech.on" ng-change="checkChange(connectionArray)" />{{tech.name}}
+                </label>
+            </li>
+        </ul>
+        <hr>
+        <div ng-repeat="portfolioItem in portfolioArray | matchChecked:connectionArray" class="ng-scope">
+            <img ng-src="{{portfolioItem.image}}" alt="" />
+            <hr />
+        </div>
+    </div>
+</body>
