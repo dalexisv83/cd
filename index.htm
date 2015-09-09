@@ -40,8 +40,9 @@
             </li>
         </ul>
         <hr>
-        <div style="display:inline-block;width:300px" ng-repeat="portfolioItem in portfolioArray | matchDevices:deviceArray | matchConnections:connectionArray" class="ng-scope">
+        <div style="display:inline-block;width:300px" ng-repeat="portfolioItem in items = (portfolioArray | matchDevices:deviceArray | matchConnections:connectionArray)" class="ng-scope">
             <img style="max-width:100%;" ng-src="{{portfolioItem.image}}" alt="" />
         </div>
+        <h2 ng-hide="items.length">There are no diagrams available for the options selected</h2>
     </div>
 </body>
