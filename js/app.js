@@ -1,9 +1,9 @@
 (function(angular) {
     'use strict';
     var cablingDiagram = angular.module('cablingDiagram', []);
-    cablingDiagram.filter('matchChecked', function() {
+    cablingDiagram.filter('matchConnections', function() {
         return function(a, origArr) {
-            var checkedArr = getChecked(origArr);
+            var checkedArr = getCheckedConnections(origArr);
             if (checkedArr.length < 1)
                 return a;
             var c = JSON.stringify(checkedArr);
@@ -11,6 +11,22 @@
             angular.forEach(a, function(value, key) {
                 value.connection.sort();
                 var b = JSON.stringify(value.connection);
+                if (b == c)
+                    matches.push(value);
+            })
+            return matches;
+        };
+    })
+    cablingDiagram.filter('matchDevices', function() {
+        return function(a, origArr) {
+            var checkedArr = getCheckedDevices(origArr);
+            // if (checkedArr.length < 1)
+            //     return a;
+            var c = JSON.stringify(checkedArr);
+            var matches = [];
+            angular.forEach(a, function(value, key) {
+                value.device.sort();
+                var b = JSON.stringify(value.device);
                 if (b == c)
                     matches.push(value);
             })

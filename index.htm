@@ -26,16 +26,22 @@
                     <input type="checkbox" checked disabled />Receiver
                 </label>
             </li>
+            <li class="no-decoration" ng-repeat="tech in deviceArray">
+                <label>
+                    <input type="checkbox" ng-model="tech.on" ng-change="changeDevices" />{{tech.name}}
+                </label>
+            </li>
+        </ul>
+        <ul>
             <li class="no-decoration" ng-repeat="tech in connectionArray">
                 <label>
-                    <input type="checkbox" ng-model="tech.on" ng-change="checkChange" />{{tech.name}}
+                    <input type="checkbox" ng-model="tech.on" ng-change="changeConnections" />{{tech.name}}
                 </label>
             </li>
         </ul>
         <hr>
-        <div ng-repeat="portfolioItem in portfolioArray | matchChecked:connectionArray" class="ng-scope">
-            <img ng-src="{{portfolioItem.image}}" alt="" />
-            <hr />
+        <div style="display:inline-block;width:300px" ng-repeat="portfolioItem in portfolioArray | matchDevices:deviceArray | matchConnections:connectionArray" class="ng-scope">
+            <img style="max-width:100%;" ng-src="{{portfolioItem.image}}" alt="" />
         </div>
     </div>
 </body>
