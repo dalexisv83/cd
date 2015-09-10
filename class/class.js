@@ -6,6 +6,10 @@ pushUnique = function(item, array) {
     return false;
 }
 
+getReceivers = function(recData) {
+    return Object.keys(recData);
+}
+
 getConnections = function(data) {
     var oneEach = [];
     var arr = [];

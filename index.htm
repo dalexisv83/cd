@@ -15,15 +15,13 @@
 
 <body ng-app="cablingDiagram">
     <div ng-controller="cablingDiagramController">
+        <select>
+            <option ng-repeat="option in receiverArray" value="{{option}}">{{option}}</option>
+        </select>
         <ul>
             <li class="no-decoration">
                 <label>
                     <input type="checkbox" checked disabled />TV
-                </label>
-            </li>
-            <li class="no-decoration">
-                <label>
-                    <input type="checkbox" checked disabled />Receiver
                 </label>
             </li>
             <li class="no-decoration" ng-repeat="tech in deviceArray">
