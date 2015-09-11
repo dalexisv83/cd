@@ -23,6 +23,11 @@ data = [{
     "image": "http://agentanswercenter.directv.com/en-us/res/system/img/DTV_DVD-Diagram-GG.gif",
     "connection": ["Composite/RCA"],
     "device": ["VCR"]
+}, {
+    "id": "6",
+    "image": "Rec-TV-Br-AR-HDMI.gif",
+    "connection": ["HDMI"],
+    "device": ["Blu-ray", "Audio Receiver"]
 }]
 
 receiverData = {
