@@ -6,10 +6,6 @@ pushUnique = function(item, array) {
     return false;
 }
 
-getReceivers = function(recData) {
-    return Object.keys(recData);
-}
-
 getConnections = function(data) {
     var oneEach = [];
     var arr = [];
@@ -21,6 +17,7 @@ getConnections = function(data) {
     for (var u in oneEach) {
         var techObject = {
             name: oneEach[u],
+            disabled: false,
             on: false
         };
         arr.push(techObject);
@@ -39,6 +36,7 @@ getDevices = function(data) {
     for (var u in oneEach) {
         var techObject = {
             name: oneEach[u],
+            disabled: false,
             on: false
         };
         arr.push(techObject);
@@ -56,6 +54,16 @@ getCheckedConnections = function(connections) {
     return checked;
 };
 
+getDisabledConnections = function(connections) {
+    var disabled = [];
+    for (var t in connections) {
+        if (connections[t].disabled === true) {
+            pushUnique(connections[t].name, disabled);
+        }
+    }
+    return disabled;
+};
+
 getCheckedDevices = function(devices) {
     var checked = [];
     for (var t in devices) {
@@ -65,3 +73,15 @@ getCheckedDevices = function(devices) {
     }
     return checked;
 };
+
+getRecConnections = function(select) {
+    if (select == undefined)
+        return null;
+    keys = Object.keys(select);
+    var filteredKeys = keys.filter(function(key) {
+        if (select[key] == "true")
+            return select[key];
+    });
+    filteredKeys.sort();
+    return filteredKeys;
+}

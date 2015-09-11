@@ -15,8 +15,9 @@
 
 <body ng-app="cablingDiagram">
     <div ng-controller="cablingDiagramController">
-        <select>
-            <option ng-repeat="option in receiverArray" value="{{option}}">{{option}}</option>
+        <select ng-model="optionSel">
+            <option value="">Choose Receiver Model</option>
+            <option ng-repeat="(option, value) in receiverArray" value="{{value}}">{{option}}</option>
         </select>
         <ul>
             <li class="no-decoration">
@@ -26,19 +27,19 @@
             </li>
             <li class="no-decoration" ng-repeat="tech in deviceArray">
                 <label>
-                    <input type="checkbox" ng-model="tech.on" ng-change="changeDevices" />{{tech.name}}
+                    <input type="checkbox" ng-model="tech.on" />{{tech.name}}
                 </label>
             </li>
         </ul>
         <ul>
-            <li class="no-decoration" ng-repeat="tech in connectionArray">
+            <li class="no-decoration" ng-repeat="tech in connectionArray | matchReceiverConnections:optionSel">
                 <label>
-                    <input type="checkbox" ng-model="tech.on" ng-change="changeConnections" />{{tech.name}}
+                    <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" />{{tech.name}}
                 </label>
             </li>
         </ul>
         <hr>
-        <div style="display:inline-block;width:300px" ng-repeat="portfolioItem in items = (portfolioArray | matchDevices:deviceArray | matchConnections:connectionArray)" class="ng-scope">
+        <div style="display:inline-block;width:300px" ng-repeat="portfolioItem in items = (portfolioArray | matchDevices:deviceArray | removeDisabled:connectionArray | matchConnections:connectionArray)">
             <img style="max-width:100%;" ng-src="{{portfolioItem.image}}" alt="" />
         </div>
         <h2 ng-hide="items.length">There are no diagrams available for the options selected</h2>
