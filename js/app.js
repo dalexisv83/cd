@@ -24,11 +24,9 @@
                 return a;
             var matches = [];
             angular.forEach(a, function(value, key) {
-                angular.forEach(value.connection, function(connection, key) {
-                    if (jQuery.inArray(connection, disabledArr) == -1)
-                        pushUnique(value, matches);
+                        if (!anyMatchInArray(value.connection, disabledArr))
+                            pushUnique(value, matches);
                 })
-            })
             return matches;
         };
     })

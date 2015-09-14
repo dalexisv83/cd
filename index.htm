@@ -11,6 +11,12 @@
     <script type="text/javascript" src="controller/controller.js"></script>
     <script type="text/javascript" src="class/class.js"></script>
     <script type="text/javascript" src="data/data.js"></script>
+    <style>
+    .disabled {
+        text-decoration: line-through;
+        color: #838383;
+    }
+    </style>
 </head>
 
 <body ng-app="cablingDiagram">
@@ -22,7 +28,7 @@
         <ul>
             <li class="no-decoration">
                 <label>
-                    <input type="checkbox" checked disabled />TV
+                    <input type="checkbox" checked disabled /><span>TV</span>
                 </label>
             </li>
             <li class="no-decoration" ng-repeat="tech in deviceArray">
@@ -34,7 +40,7 @@
         <ul>
             <li class="no-decoration" ng-repeat="tech in connectionArray | matchReceiverConnections:optionSel">
                 <label>
-                    <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" />{{tech.name}}
+                    <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" /><span ng-class="{'disabled': tech.disabled}">{{tech.name}}</span>
                 </label>
             </li>
         </ul>
