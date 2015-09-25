@@ -60,6 +60,7 @@
                 value.disabled = false;
                 if (jQuery.inArray(value.name, c) == -1) {
                     value.disabled = true;
+                    value.on = false; // unchecks disabled connections. Maybe filter should ignore and keep users input?
                 }
             })
             return a;
