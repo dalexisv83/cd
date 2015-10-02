@@ -1,0 +1,138 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+div {
+	margin: 0;
+	padding: 0;
+}
+
+.diagram {
+	margin:10px;
+}
+
+.preview {
+    display: inline-block;
+    width: 20%;
+    min-width: 175px;
+    padding: 5px;
+    background-color: #eee;
+    vertical-align: top;
+    text-align: center;
+}
+
+.setup, .devices {
+	margin-right: -4px;
+	vertical-align: top;
+}
+
+.disabled {
+    text-decoration: line-through;
+    color: #838383;
+}
+
+.setup {
+	position: relative;
+	display: inline-block;
+	width: 20%;
+}
+
+.vert, .horz, .arrow {
+	position: absolute;
+	right: 0;
+}
+
+.down .arrow {
+	-webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    transform: rotate(180deg);
+}
+
+.step-1 .vert, .step-1 .horz {
+	top: 0;
+}
+
+.step-1 .arrow {
+	top: 25px;
+	right: 4px;
+
+}
+
+.step-2 .vert, .step-2 .horz {
+	top: 5px;
+}
+
+.step-2 .arrow {
+	top: 30px;
+	right: 12px;
+}
+
+.step-3 .vert, .step-3 .horz {
+	top: 10px;
+}
+
+.step-3 .arrow {
+	top: 35px;
+	right: 20px;
+}
+
+.vert {
+	overflow: hidden;
+}
+
+.height-1 .vert {
+	height: 50px;
+}
+
+.height-2 .vert {
+	height: 93px;
+}
+
+.height-3 .vert {
+	height: 136px;
+}
+
+.devices {
+	display: inline-block;
+	width: 80%;
+}
+
+.devices div {
+	padding: 10px;
+	text-align: center;
+}
+
+.preview .devices div {
+	color: white;
+}
+
+.devices div + div {
+	margin-top: 5px;
+}
+
+.tv {
+    background: #838383;
+}
+
+.rec {
+    background: #626262;
+}
+
+.vcr {
+	background: #458383;
+}
+
+.blu-ray {
+	background: #834583;
+}
+
+.audio-receiver {
+	background: #838345;
+}

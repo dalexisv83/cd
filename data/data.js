@@ -1,33 +1,43 @@
 data = [{
-    "id": "1",
-    "image": "http://agentanswercenter.directv.com/en-us/res/system/img/DTV_DVD-Diagram-1.gif",
     "connection": ["Coaxial"],
-    "device": []
+    "device": [],
+    "setup": [[2,1]]
 }, {
-    "id": "2",
-    "image": "http://agentanswercenter.directv.com/en-us/res/system/img/DTV_DVD-Diagram-2.gif",
     "connection": ["Composite/RCA"],
-    "device": []
+    "device": [],
+    "setup": [[2,1]]
 }, {
-    "id": "3",
-    "image": "http://agentanswercenter.directv.com/en-us/res/system/img/DTV_DVD-Diagram-3.gif",
     "connection": ["S-Video", "Composite/RCA"],
-    "device": []
+    "device": [],
+    "setup": [[2,1], [2,1]]
 }, {
-    "id": "4",
-    "image": "http://agentanswercenter.directv.com/en-us/res/system/img/DTV_DVD-Diagram-4.gif",
+    "connection": ["S-Video"],
+    "device": [],
+    "setup": [[2,1]]
+}, {
+    "connection": ["Component/RGB/YPrPb"],
+    "device": [],
+    "setup": [[2,1]]
+}, {
+    "connection": ["Component/RGB/YPrPb", "Digital Coax Audio"],
+    "device": [],
+    "setup": [[2,1]]
+}, {
+    "connection": ["Component/RGB/YPrPb", "Digital Audio (Optical)"],
+    "device": [],
+    "setup": [[2,1]]
+}, {
     "connection": ["HDMI"],
-    "device": []
+    "device": [],
+    "setup": [[2,1]]
 }, {
-    "id": "5",
-    "image": "http://agentanswercenter.directv.com/en-us/res/system/img/DTV_DVD-Diagram-GG.gif",
-    "connection": ["Composite/RCA"],
-    "device": ["VCR"]
+    "connection": ["Composite/RCA", "Composite/RCA"],
+    "device": ["VCR"],
+    "setup": [[2,1], [3,1]]
 }, {
-    "id": "6",
-    "image": "Rec-TV-Br-AR-HDMI.gif",
-    "connection": ["HDMI"],
-    "device": ["Blu-ray", "Audio Receiver"]
+    "connection": ["HDMI", "HDMI", "HDMI"],
+    "device": ["Blu-ray", "Audio Receiver"],
+    "setup": [[2,1], [3,1], [1,4]]
 }]
 
 receiverData = {

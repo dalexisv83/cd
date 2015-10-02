@@ -66,4 +66,11 @@
             return a;
         };
     })
+    cablingDiagram.filter('spcToHyphen',function() {
+    return function(input) {
+        if (input) {
+            return input.replace(/\s+/g, '-');
+        }
+    }
+});
 })(window.angular);

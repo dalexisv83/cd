@@ -11,12 +11,7 @@
     <script type="text/javascript" src="controller/controller.js"></script>
     <script type="text/javascript" src="class/class.js"></script>
     <script type="text/javascript" src="data/data.js"></script>
-    <style>
-    .disabled {
-        text-decoration: line-through;
-        color: #838383;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
 </head>
 
 <body ng-app="cablingDiagram">
@@ -45,8 +40,32 @@
             </li>
         </ul>
         <hr>
-        <div style="display:inline-block;width:300px" ng-repeat="portfolioItem in items = (portfolioArray | matchDevices:deviceArray | removeDisabled:connectionArray | matchConnections:connectionArray)">
-            <img style="max-width:100%;" ng-src="{{portfolioItem.image}}" alt="" />
+        <div class="diagram preview" ng-repeat="portfolioItem in items = (portfolioArray | matchDevices:deviceArray | removeDisabled:connectionArray | matchConnections:connectionArray)">
+            <div class="setup">
+                <div class="step-{{step + 1}}" ng-repeat="(step, setup) in portfolioItem.setup track by $index" ng-class="{
+                'level-{{setup[0]}}': {{setup[0]}} < {{setup[1]}},
+                'level-{{setup[1]}}': {{setup[1]}} < {{setup[0]}},
+                'height-{{setup[0] - setup[1]}}': {{setup[0]}} > {{setup[1]}},
+                'height-{{setup[1] - setup[0]}}': {{setup[1]}} > {{setup[0]}},
+                'up': {{setup[0]}} > {{setup[1]}},
+                'down': {{setup[1]}} > {{setup[0]}}
+                }">
+                    <img class="horz" ng-src="img/{{$index + 1}}-{{setup[0]}}.png" />
+                    <img class="horz" ng-src="img/{{$index + 1}}-{{setup[1]}}.png" />
+                    <div class="vert">
+                        <img ng-src="img/{{$index + 1}}-0.png" />
+                    </div>
+                    <div class="arrow">
+                        <img ng-src="img/{{$index + 1}}-a.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="devices">
+                <div class="tv">TV</div>
+                <div class="rec">DIRECTV</div>
+                <div ng-repeat="device in portfolioItem.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
+            </div>
+            <span ng-repeat="connection in portfolioItem.connection">{{connection}}<span ng-if="!$last">, </span></span>
         </div>
         <h2 ng-hide="items.length">There are no diagrams available for the options selected</h2>
     </div>
