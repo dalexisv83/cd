@@ -10,7 +10,7 @@
             var matches = [];
             angular.forEach(a, function(value, key) {
                 value.connection.sort();
-                var b = JSON.stringify(value.connection);
+                var b = JSON.stringify(unique(value.connection));
                 if (b == c)
                     matches.push(value);
             })

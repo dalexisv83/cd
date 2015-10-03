@@ -6,6 +6,14 @@ pushUnique = function(item, array) {
     return false;
 }
 
+function unique(list) {
+    var result = [];
+    $.each(list, function(i, e) {
+        if ($.inArray(e, result) == -1) result.push(e);
+    });
+    return result;
+}
+
 getConnections = function(data) {
     var oneEach = [];
     var arr = [];
