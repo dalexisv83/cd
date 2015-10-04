@@ -6,7 +6,7 @@ pushUnique = function(item, array) {
     return false;
 }
 
-function unique(list) {
+unique = function (list) {
     var result = [];
     $.each(list, function(i, e) {
         if ($.inArray(e, result) == -1) result.push(e);
