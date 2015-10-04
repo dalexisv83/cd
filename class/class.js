@@ -90,7 +90,7 @@ getRecConnections = function(select) {
         keys.push(key)
     });
     var filteredKeys = jQuery.grep(keys, function(key) {
-        if (select[key] == "true")
+        if (select[key] == true)
             return select[key];
     });
     filteredKeys.sort();

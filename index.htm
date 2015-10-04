@@ -16,9 +16,8 @@
 
 <body ng-app="cablingDiagram">
     <div ng-controller="cablingDiagramController">
-        <select ng-model="optionSel">
+        <select ng-options="receiver.model for receiver in receiverArray" ng-model="optionSel">
             <option value="">Choose Receiver Model</option>
-            <option ng-repeat="(option, value) in receiverArray" value="{{value}}">{{option}}</option>
         </select>
         <ul>
             <li class="no-decoration">

@@ -40,205 +40,244 @@ data = [{
     "setup": [[2,1], [3,1], [1,4]]
 }]
 
-receiverData = {
-    "D11": {
-        "HDMI": "",
-        "Component/RGB/YPrPb": "",
-        "10-Pin Mini Din": "",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "true",
-        "Digital Audio (Optical)": "",
-        "Digital Coax Audio": ""
-    },
-    "D12": {
-        "HDMI": "",
-        "Component/RGB/YPrPb": "",
-        "10-Pin Mini Din": "",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "true",
-        "Digital Audio (Optical)": "",
-        "Digital Coax Audio": ""
-    },
-    "HR34": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
-    },
-    "HR44": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
-    },
-    "C31": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "Via 10-Pin Mini Din",
-        "10-Pin Mini Din": "true",
-        "Composite/RCA": "n/a",
-        "S-Video": "n/a",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "n/a",
-        "Digital Coax Audio": "true"
-    },
-    "C41": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "Via 10-Pin Mini Din",
-        "10-Pin Mini Din": "true",
-        "Composite/RCA": "n/a",
-        "S-Video": "n/a",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "n/a",
-        "Digital Coax Audio": "true"
-    },
-    "H20": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "n/a"
-    },
-    "H21": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
-    },
-    "H23": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
-    },
-    "H24": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "n/a",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "n/a",
-        "Digital Coax Audio": "true"
-    },
-    "H25": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "Via 10-Pin Mini Din",
-        "10-Pin Mini Din": "true",
-        "Composite/RCA": "true",
-        "S-Video": "n/a",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "n/a",
-        "Digital Coax Audio": "true"
-    },
-    "HR20": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
-    },
-    "HR21": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
-    },
-    "HR22": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
-    },
-    "HR23": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
-    },
-    "HR24": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
-    },
-    "R15": {
-        "HDMI": "",
-        "Component/RGB/YPrPb": "",
-        "10-Pin Mini Din": "",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "true",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "n/a"
-    },
-    "R16": {
-        "HDMI": "",
-        "Component/RGB/YPrPb": "",
-        "10-Pin Mini Din": "",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "true",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "n/a"
-    },
-    "TiVo": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
-    },
-    "HG1X": {
-        "HDMI": "true",
-        "Component/RGB/YPrPb": "true",
-        "10-Pin Mini Din": "n/a",
-        "Composite/RCA": "true",
-        "S-Video": "true",
-        "Coaxial": "n/a",
-        "Digital Audio (Optical)": "true",
-        "Digital Coax Audio": "true"
+receiverData = [{
+    "model": "D11",
+    "compatible": {
+        "HDMI": false,
+        "Component/RGB/YPrPb": false,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": true,
+        "Digital Audio (Optical)": false,
+        "Digital Coax Audio ": false
     }
-}
+}, {
+    "model": "D12",
+    "compatible": {
+        "HDMI": false,
+        "Component/RGB/YPrPb": false,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": true,
+        "Digital Audio (Optical)": false,
+        "Digital Coax Audio": false
+    }
+}, {
+    "model": "HR34",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "HR44",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "C31",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": "Via 10-Pin Mini Din",
+        "10-Pin Mini Din": true,
+        "Composite/RCA": false,
+        "S-Video": false,
+        "Coaxial": false,
+        "Digital Audio (Optical)": false,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "C41",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": "Via 10-Pin Mini Din",
+        "10-Pin Mini Din": true,
+        "Composite/RCA": false,
+        "S-Video": false,
+        "Coaxial": false,
+        "Digital Audio (Optical)": false,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "H20",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": false
+    }
+}, {
+    "model": "H21",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "H23",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "H24",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": false,
+        "Coaxial": false,
+        "Digital Audio (Optical)": false,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "H25",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": "Via 10-Pin Mini Din",
+        "10-Pin Mini Din": true,
+        "Composite/RCA": true,
+        "S-Video": false,
+        "Coaxial": false,
+        "Digital Audio (Optical)": false,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "HR20",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "HR21",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "HR22",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "HR23",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "HR24",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "R15",
+    "compatible": {
+        "HDMI": false,
+        "Component/RGB/YPrPb": false,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": true,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": false
+    }
+}, {
+    "model": "R16",
+    "compatible": {
+        "HDMI": false,
+        "Component/RGB/YPrPb": false,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": true,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": false
+    }
+}, {
+    "model": "TiVo",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}, {
+    "model": "HG1X",
+    "compatible": {
+        "HDMI": true,
+        "Component/RGB/YPrPb": true,
+        "10-Pin Mini Din": false,
+        "Composite/RCA": true,
+        "S-Video": true,
+        "Coaxial": false,
+        "Digital Audio (Optical)": true,
+        "Digital Coax Audio": true
+    }
+}]

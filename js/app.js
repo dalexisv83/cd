@@ -55,7 +55,7 @@
                 })
                 return a;
             }
-            var c = getRecConnections(JSON.parse(optSel));
+            var c = getRecConnections(optSel.compatible);
             angular.forEach(a, function(value, key) {
                 value.disabled = false;
                 if (jQuery.inArray(value.name, c) == -1) {
