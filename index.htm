@@ -40,7 +40,7 @@
             </li>
         </ul>
         <hr>
-        <div class="diagram preview" ng-repeat="portfolioItem in items = (portfolioArray | matchDevices:deviceArray | removeDisabled:connectionArray | matchConnections:connectionArray)">
+        <div class="diagram preview" ng-repeat="portfolioItem in items = (portfolioArray | matchDevices:deviceArray | removeDisabled:connectionArray | matchConnections:connectionArray)" ng-click="portfolioItem.detail = true">
             <div class="setup">
                 <div class="step-{{step + 1}}" ng-repeat="(step, setup) in portfolioItem.setup track by $index" ng-class="{
                 'level-{{setup[0]}}': {{setup[0]}} < {{setup[1]}},
@@ -68,5 +68,34 @@
             <span class="step-{{$index + 1}}" ng-repeat="connection in portfolioItem.connection track by $index">{{connection}}<span ng-if="!$last">, </span></span>
         </div>
         <h2 ng-hide="items.length">There are no diagrams available for the options selected</h2>
+        <div ng-repeat="item in items | filter:{ detail: true }">
+            <div class="setup">
+                <div class="step-{{step + 1}}" ng-repeat="(step, setup) in item.setup track by $index" ng-class="{
+                'level-{{setup[0]}}': {{setup[0]}} < {{setup[1]}},
+                'level-{{setup[1]}}': {{setup[1]}} < {{setup[0]}},
+                'height-{{setup[0] - setup[1]}}': {{setup[0]}} > {{setup[1]}},
+                'height-{{setup[1] - setup[0]}}': {{setup[1]}} > {{setup[0]}},
+                'up': {{setup[0]}} > {{setup[1]}},
+                'down': {{setup[1]}} > {{setup[0]}}
+                }">
+                    <img class="horz" ng-src="img/{{$index + 1}}-{{setup[0]}}.png" />
+                    <img class="horz" ng-src="img/{{$index + 1}}-{{setup[1]}}.png" />
+                    <div class="vert">
+                        <img ng-src="img/{{$index + 1}}-0.png" />
+                    </div>
+                    <div class="arrow">
+                        <img ng-src="img/{{$index + 1}}-a.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="devices">
+                <div class="tv">TV</div>
+                <div class="rec">DIRECTV</div>
+                <div ng-repeat="device in item.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
+            </div>
+            <span class="step-{{$index + 1}}" ng-repeat="connection in item.connection track by $index">{{connection}}<span ng-if="!$last">, </span></span>
+            <br />
+            <button ng-click="item.detail = false">close</button>
+        </div>
     </div>
 </body>
