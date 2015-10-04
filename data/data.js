@@ -1,40 +1,50 @@
 data = [{
+    "detail": false,
     "connection": ["Coaxial"],
     "device": [],
     "setup": [[2,1]]
 }, {
+    "detail": false,
     "connection": ["Composite/RCA"],
     "device": [],
     "setup": [[2,1]]
 }, {
+    "detail": false,
     "connection": ["S-Video", "Composite/RCA"],
     "device": [],
     "setup": [[2,1], [2,1]]
 }, {
+    "detail": false,
     "connection": ["S-Video"],
     "device": [],
     "setup": [[2,1]]
 }, {
+    "detail": false,
     "connection": ["Component/RGB/YPrPb"],
     "device": [],
     "setup": [[2,1]]
 }, {
+    "detail": false,
     "connection": ["Component/RGB/YPrPb", "Digital Coax Audio"],
     "device": [],
     "setup": [[2,1], [2,1]]
 }, {
+    "detail": false,
     "connection": ["Component/RGB/YPrPb", "Digital Audio (Optical)"],
     "device": [],
     "setup": [[2,1], [2,1]]
 }, {
+    "detail": false,
     "connection": ["HDMI"],
     "device": [],
     "setup": [[2,1]]
 }, {
+    "detail": false,
     "connection": ["Composite/RCA", "Composite/RCA"],
     "device": ["VCR"],
     "setup": [[2,1], [3,1]]
 }, {
+    "detail": false,
     "connection": ["HDMI", "HDMI", "HDMI"],
     "device": ["Blu-ray", "Audio Receiver"],
     "setup": [[2,1], [3,1], [1,4]]

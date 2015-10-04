@@ -23,6 +23,7 @@ div {
     background-color: #eee;
     vertical-align: top;
     text-align: center;
+    overflow: hidden;
 }
 
 .setup, .devices {
