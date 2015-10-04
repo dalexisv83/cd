@@ -55,6 +55,18 @@ div {
     transform: rotate(180deg);
 }
 
+.step-1 {
+	color: #3b97d3;
+}
+
+.step-2 {
+	color: #e64c3b;
+}
+
+.step-3 {
+	color: #834583;
+}
+
 .step-1 .vert, .step-1 .horz {
 	top: 0;
 }

@@ -21,11 +21,11 @@ data = [{
 }, {
     "connection": ["Component/RGB/YPrPb", "Digital Coax Audio"],
     "device": [],
-    "setup": [[2,1]]
+    "setup": [[2,1], [2,1]]
 }, {
     "connection": ["Component/RGB/YPrPb", "Digital Audio (Optical)"],
     "device": [],
-    "setup": [[2,1]]
+    "setup": [[2,1], [2,1]]
 }, {
     "connection": ["HDMI"],
     "device": [],
