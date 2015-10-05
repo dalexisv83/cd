@@ -61,7 +61,7 @@
             </div>
             <div class="devices">
                 <div class="tv">TV</div>
-                <div class="rec">DIRECTV</div>
+                <div class="rec"><span ng-if="optionSel.model">{{optionSel.model}}</span><span ng-if="!optionSel.model">DIRECTV</span></div>
                 <div ng-repeat="device in portfolioItem.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
             </div>
             <span class="step-{{$index + 1}}" ng-repeat="connection in portfolioItem.connection track by $index">{{connection}}<span ng-if="!$last">, </span></span>
@@ -89,7 +89,7 @@
             </div>
             <div class="devices">
                 <div class="tv">TV</div>
-                <div class="rec">DIRECTV</div>
+                <div class="rec">{{optionSel.model}}</div>
                 <div ng-repeat="device in item.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
             </div>
             <span class="step-{{$index + 1}}" ng-repeat="connection in item.connection track by $index">{{connection}}<span ng-if="!$last">, </span></span>
