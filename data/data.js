@@ -2,7 +2,10 @@ data = [{
     "detail": false,
     "connection": ["Coaxial"],
     "device": [],
-    "setup": [[2,1]]
+    "setup": [[2,1]],
+    "instructions": [
+        "Connect {{optionSel.model}} to TV with Coaxial cable."
+    ]
 }, {
     "detail": false,
     "connection": ["Composite/RCA"],

@@ -6,28 +6,26 @@ html {
   box-sizing: inherit;
 }
 
-div {
+body {
 	margin: 0;
-	padding: 0;
+	padding: 10px;
 }
 
-.diagram {
-	margin:10px;
+ul {
+	list-style: none;
+	padding-left: 0;
 }
 
 .preview {
-    display: inline-block;
-    width: 20%;
+    width: 100%;
     min-width: 175px;
     padding: 5px;
     background-color: #eee;
     vertical-align: top;
-    text-align: center;
     overflow: hidden;
 }
 
 .setup, .devices {
-	margin-right: -4px;
 	vertical-align: top;
 }
 
@@ -38,8 +36,6 @@ div {
 
 .setup {
 	position: relative;
-	display: inline-block;
-	width: 20%;
 }
 
 .vert, .horz, .arrow {
@@ -110,11 +106,6 @@ div {
 
 .height-3 .vert {
 	height: 136px;
-}
-
-.devices {
-	display: inline-block;
-	width: 80%;
 }
 
 .devices div {
