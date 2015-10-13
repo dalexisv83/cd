@@ -16,6 +16,7 @@
     <script type="text/javascript" src="data/data.js"></script>
     <link rel="stylesheet" type="text/css" href="style/csswizardry-grids/csswizardry-grids.css">
     <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="stylesheet" type="text/css" href="style/lines.css" />
     <!--[if lt IE 9]>
     <script type="text/javascript" src="js/respond.js"></script>
     <![endif]-->
@@ -24,54 +25,12 @@
 <body ng-app="cablingDiagram">
     <div ng-controller="cablingDiagramController">
         <div class="grid">
-            <div class="grid__item" ng-repeat="item in items | filter:{ detail: true }">
-                <div class="grid">
-                    <div class="grid__item one-whole">
-                        <button ng-click="item.detail = false">close</button>
-                    </div>
-                    <div class="grid__item palm--one-whole one-half">
-                        <div class="preview">
-                            <div class="grid--full">
-                                <div class="grid__item one-fifth setup">
-                                    <div class="step-{{step + 1}}" ng-repeat="(step, setup) in item.setup track by $index" ng-class="{
-                                    'level-{{setup[0]}}': {{setup[0]}} < {{setup[1]}},
-                                    'level-{{setup[1]}}': {{setup[1]}} < {{setup[0]}},
-                                    'height-{{setup[0] - setup[1]}}': {{setup[0]}} > {{setup[1]}},
-                                    'height-{{setup[1] - setup[0]}}': {{setup[1]}} > {{setup[0]}},
-                                    'up': {{setup[0]}} > {{setup[1]}},
-                                    'down': {{setup[1]}} > {{setup[0]}}
-                                    }">
-                                        <img class="horz" ng-src="img/{{$index + 1}}-{{setup[0]}}.png" />
-                                        <img class="horz" ng-src="img/{{$index + 1}}-{{setup[1]}}.png" />
-                                        <div class="vert">
-                                            <img ng-src="img/{{$index + 1}}-0.png" />
-                                        </div>
-                                        <div class="arrow">
-                                            <img ng-src="img/{{$index + 1}}-a.png" />
-                                        </div>
-                                    </div>
-                                </div><!--
-                             --><div class="grid__item four-fifths devices">
-                                    <div class="tv">TV</div>
-                                    <div class="rec">
-                                        <span ng-if="optionSel.model">{{optionSel.model}}</span><span ng-if="!optionSel.model">DIRECTV</span>
-                                    </div>
-                                    <div ng-repeat="device in item.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid__item palm--one-whole one-half">
-                        <p ng-repeat="(no, step) in item.instructions track by $index"><span class="step-{{no + 1}}">{{no + 1}}.</span> <span compile="step"></span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid__item palm-one-whole lap--one-third portable--one-quarter desk--one-fifth">
+            <div class="grid__item palm-one-whole lap--one-third portable--one-quarter desk--one-fifth grey">
+                <h2>Receiver</h2>
                 <select ng-options="receiver.model for receiver in receiverArray" ng-model="optionSel">
                     <option value="">Choose Receiver Model</option>
                 </select>
+                <h2>Devices</h2>
                 <ul>
                     <li class="no-decoration">
                         <label>
@@ -84,6 +43,7 @@
                         </label>
                     </li>
                 </ul>
+                <h2>Connections</h2>
                 <ul>
                     <li class="no-decoration" ng-repeat="tech in connectionArray | matchReceiverConnections:optionSel">
                         <label>
@@ -92,15 +52,66 @@
                     </li>
                 </ul>
             </div>
-            <div class="grid__item palm-one-whole lap--two-thirds portable--three-quarters desk--four-fifths">
+            <div class="grid__item palm-one-whole lap--two-thirds portable--three-quarters desk--four-fifths stage">
+                <div class="grid">
+                    <div class="grid__item modal" ng-repeat="item in items | filter:{ detail: true }">
+                        <div class="grid">
+                            <div class="grid__item one-whole">
+                                <button ng-click="item.detail = false">close</button>
+                            </div>
+                            <div class="grid__item palm--one-whole one-half">
+                                <div class="diagram">
+                                    <div class="grid--full">
+                                        <div class="grid__item four-fifths devices">
+                                            <div class="tv">TV</div>
+                                            <div class="rec">
+                                                <span ng-bind="optionSel.model | ternary:'DIRECTV'"></span>
+                                            </div>
+                                            <div ng-repeat="device in item.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
+                                        </div><!-- 
+                                     --><div class="grid__item one-fifth setup">
+                                            <div class="step-{{step + 1}}" ng-repeat="(step, setup) in item.setup track by $index" ng-class="{
+                                            'level-{{setup[0]}}': {{setup[0]}} < {{setup[1]}},
+                                            'level-{{setup[1]}}': {{setup[1]}} < {{setup[0]}},
+                                            'height-{{setup[0] - setup[1]}}': {{setup[0]}} > {{setup[1]}},
+                                            'height-{{setup[1] - setup[0]}}': {{setup[1]}} > {{setup[0]}},
+                                            'up': {{setup[0]}} > {{setup[1]}},
+                                            'down': {{setup[1]}} > {{setup[0]}}
+                                            }">
+                                                <img class="horz" ng-src="img/{{$index + 1}}-{{setup[0]}}-3x.png" />
+                                                <img class="horz" ng-src="img/{{$index + 1}}-{{setup[1]}}-3x.png" />
+                                                <div class="vert">
+                                                    <img ng-src="img/{{$index + 1}}-0-3x.png" />
+                                                </div>
+                                                <div class="arrow">
+                                                    <img ng-src="img/{{$index + 1}}-a-3x.png" />
+                                                </div>
+                                            </div>
+                                        </div><!--
+                                 --></div>
+                                </div>
+                            </div>
+                            <div class="grid__item palm--one-whole one-half">
+                                <p ng-repeat="(no, step) in item.instructions track by $index" class="instructions step-{{no + 1}}"><img src="http://agentanswercenterstg.directv.com/en-us/res/images/conn_{{item.connection[no] | lowercase}}.jpg" /><b>{{no + 1}}.</b> <span compile="step"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="grid">
                     <div class="grid__item">
                         <h2 ng-if="!items.length">There are no diagrams available for the options selected</h2>
                     </div>
                     <div class="grid__item palm--one-whole lap--one-half portable--one-third desk--one-quarter" ng-repeat="portfolioItem in items = (portfolioArray | matchDevices:deviceArray | removeDisabled:connectionArray | matchConnections:connectionArray)" ng-click="portfolioItem.detail = true">
-                        <div class="preview">
+                        <div class="diagram preview">
                             <div class="grid--full">
-                                <div class="grid__item one-fifth setup">
+                                <div class="grid__item four-fifths devices">
+                                    <div class="tv">TV</div>
+                                    <div class="rec">
+                                        <span ng-bind="optionSel.model | ternary:'DIRECTV'"></span>
+                                    </div>
+                                    <div ng-repeat="device in portfolioItem.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
+                                </div><!--
+                             --><div class="grid__item one-fifth setup">
                                     <div class="step-{{step + 1}}" ng-repeat="(step, setup) in portfolioItem.setup track by $index" ng-class="{
                                     'level-{{setup[0]}}': {{setup[0]}} < {{setup[1]}},
                                     'level-{{setup[1]}}': {{setup[1]}} < {{setup[0]}},
@@ -119,14 +130,7 @@
                                         </div>
                                     </div>
                                 </div><!--
-                             --><div class="grid__item four-fifths devices">
-                                    <div class="tv">TV</div>
-                                    <div class="rec">
-                                        <span ng-if="optionSel.model">{{optionSel.model}}</span><span ng-if="!optionSel.model">DIRECTV</span>
-                                    </div>
-                                    <div ng-repeat="device in portfolioItem.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
-                                </div>
-                                <div class="grid__item one-whole">
+                             --><div class="grid__item one-whole">
                                     <span class="step-{{$index + 1}}" ng-repeat="connection in portfolioItem.connection track by $index">{{connection}}<span ng-if="!$last">, </span></span>
                                 </div>
                             </div>
@@ -135,5 +139,7 @@
                 </div>
             </div>
         </div>
-    </div><!-- End controller -->
+    </div>
+    </div>
+    <!-- End controller -->
 </body>

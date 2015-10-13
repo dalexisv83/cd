@@ -1,0 +1,101 @@
+$origTop: 0px;
+$plusTop: 5px;
+
+@for $i from 1 through 8 {
+	@if $i == 1 {
+		.step-#{$i} .vert, .step-#{$i} .horz {
+			top: $origTop;
+		}
+	} @else {
+		.step-#{$i} .vert, .step-#{$i} .horz {
+			top: $origTop + $plusTop * ($i - 1);
+		}
+	}
+}
+
+$plusTop: 5px * 3;
+.modal {
+	@for $i from 1 through 8 {
+		@if $i == 1 {
+			.step-#{$i} .vert, .step-#{$i} .horz {
+				top: $origTop;
+			}
+		} @else {
+			.step-#{$i} .vert, .step-#{$i} .horz {
+				top: $origTop + $plusTop * ($i - 1);
+			}
+		}
+	}
+}
+
+$origTop: 25px;
+$plusTop: 5px;
+$origLeft: 4px;
+$plusLeft: 8px;
+
+@for $i from 1 through 8 {
+	@if $i == 1 {
+		.step-#{$i} .arrow {
+			top: $origTop;
+			left: $origLeft;
+		}
+	} @else {
+		.step-#{$i} .arrow {
+			top: $origTop + $plusTop * ($i - 1);
+			left: $origLeft + $plusLeft * ($i - 1);
+		}
+	}
+}
+
+$origTop: 25px * 3;
+$plusTop: 5px * 3;
+$origLeft: 4px * 3;
+$plusLeft: 8px * 3;
+
+.modal {
+	@for $i from 1 through 8 {
+		@if $i == 1 {
+			.step-#{$i} .arrow {
+				top: $origTop;
+				left: $origLeft;
+			}
+		} @else {
+			.step-#{$i} .arrow {
+				top: $origTop + $plusTop * ($i - 1);
+				left: $origLeft + $plusLeft * ($i - 1);
+			}
+		}
+	}
+}
+
+$origHeight: 50px;
+$plusHeight: 43px;
+
+@for $i from 1 through 8 {
+	@if $i == 1 {
+		.height-#{$i} .vert {
+			height: $origHeight;
+		}
+	} @else {
+		.height-#{$i} .vert {
+			height: $origHeight + $plusHeight * ($i - 1);
+		}
+	}
+}
+
+$origHeight: 50px * 3;
+$plusHeight: 43px * 3;
+
+.modal {
+	@for $i from 1 through 8 {
+		@if $i == 1 {
+			.height-#{$i} .vert {
+				height: $origHeight;
+			}
+		} @else {
+			.height-#{$i} .vert {
+				height: $origHeight + $plusHeight * ($i - 1);
+			}
+		}
+	}
+}
