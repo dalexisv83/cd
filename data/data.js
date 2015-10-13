@@ -2,7 +2,10 @@ data = [{
     "detail": false,
     "connection": ["Coaxial"],
     "device": [],
-    "setup": [[2,1]]
+    "setup": [[2,1]],
+    "instructions": [
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
+    ]
 }, {
     "detail": false,
     "connection": ["Composite/RCA"],
@@ -12,7 +15,11 @@ data = [{
     "detail": false,
     "connection": ["S-Video", "Composite/RCA"],
     "device": [],
-    "setup": [[2,1], [2,1]]
+    "setup": [[2,1], [2,1]],
+    "instructions": [
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable.",
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
+    ]
 }, {
     "detail": false,
     "connection": ["S-Video"],
@@ -37,12 +44,19 @@ data = [{
     "detail": false,
     "connection": ["HDMI"],
     "device": [],
-    "setup": [[2,1]]
+    "setup": [[2,1]],
+    "instructions": [
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
+    ]
 }, {
     "detail": false,
     "connection": ["Composite/RCA", "Composite/RCA"],
     "device": ["VCR"],
-    "setup": [[2,1], [3,1]]
+    "setup": [[2,1], [3,1]],
+    "instructions": [
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable.",
+        "Connect {{item.device[0]}} to TV with {{item.connection[no]}} cable."
+    ]
 }, {
     "detail": false,
     "connection": ["HDMI", "HDMI", "HDMI"],

@@ -6,29 +6,52 @@ html {
   box-sizing: inherit;
 }
 
-div {
+body {
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
 	margin: 0;
-	padding: 0;
+	padding: 10px;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+select {
+	font-family: inherit;
+}
+
+.grey {
+	background-color: #23272f;
+	color: white;
+}
+
+.grey h2 {
+	color: #2caae2;
 }
 
 .diagram {
-	margin:10px;
-}
-
-.preview {
-    display: inline-block;
-    width: 20%;
+    width: 100%;
     min-width: 175px;
     padding: 5px;
-    background-color: #eee;
     vertical-align: top;
-    text-align: center;
     overflow: hidden;
 }
 
+.preview {
+    background-color: #eee;
+}
+
 .setup, .devices {
-	margin-right: -4px;
 	vertical-align: top;
+}
+
+.devices div + div {
+	margin-top: 5px;
+}
+
+.modal .devices div + div {
+	margin-top: 15px;
 }
 
 .disabled {
@@ -38,13 +61,11 @@ div {
 
 .setup {
 	position: relative;
-	display: inline-block;
-	width: 20%;
 }
 
 .vert, .horz, .arrow {
 	position: absolute;
-	right: 0;
+	left: 0;
 }
 
 .down .arrow {
@@ -56,78 +77,59 @@ div {
     transform: rotate(180deg);
 }
 
-.step-1 {
+.step-1 b {
 	color: #3b97d3;
 }
 
-.step-2 {
+.step-2 b {
 	color: #e64c3b;
 }
 
-.step-3 {
+.step-3 b {
 	color: #834583;
 }
 
-.step-1 .vert, .step-1 .horz {
-	top: 0;
+.instructions img {
+	width: 100px;
+	height: auto;
+	border: 4px solid transparent;
+	margin-right: 10px;
+	vertical-align: top;
 }
 
-.step-1 .arrow {
-	top: 25px;
-	right: 4px;
-
+.instructions.step-1 img {
+	border-color: #3b97d3;
 }
 
-.step-2 .vert, .step-2 .horz {
-	top: 5px;
+.instructions.step-2 img {
+	border-color: #e64c3b;
 }
 
-.step-2 .arrow {
-	top: 30px;
-	right: 12px;
-}
-
-.step-3 .vert, .step-3 .horz {
-	top: 10px;
-}
-
-.step-3 .arrow {
-	top: 35px;
-	right: 20px;
+.instructions.step-3 img {
+	border-color: #834583;
 }
 
 .vert {
 	overflow: hidden;
 }
 
-.height-1 .vert {
-	height: 50px;
-}
-
-.height-2 .vert {
-	height: 93px;
-}
-
-.height-3 .vert {
-	height: 136px;
-}
-
-.devices {
-	display: inline-block;
-	width: 80%;
-}
-
 .devices div {
 	padding: 10px;
 	text-align: center;
-}
-
-.preview .devices div {
 	color: white;
 }
 
-.devices div + div {
-	margin-top: 5px;
+.modal {
+	overflow: hidden;
+	position: absolute;
+	z-index: 1001;
+	background-color: white;
+	top: 0;
+	padding: 25px;
+}
+
+.modal .devices div {
+	padding: 51px 10px;
 }
 
 .tv {
@@ -148,4 +150,8 @@ div {
 
 .audio-receiver {
 	background: #838345;
+}
+
+.stage {
+	position: relative;
 }
