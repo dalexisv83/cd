@@ -106,5 +106,16 @@
                 return ifNot;
             }
         }
+    })
+    cablingDiagram.directive('magnify', function() {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs) {
+                if (jQuery.fn.imagezoomsl) {
+                    var props = eval('({' + attrs.magnify + '})');
+                    $(element).imagezoomsl(props);
+                }
+            }
+        };
     });
 })(window.angular);
