@@ -10,6 +10,7 @@
     <![endif]-->
     <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/angular.js"></script>
     <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/jquery.js"></script>
+    <script type="text/javascript" src="js/zoomsl-3.0.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="controller/controller.js"></script>
     <script type="text/javascript" src="class/class.js"></script>
@@ -25,6 +26,14 @@
 <body ng-app="cablingDiagram">
     <div ng-controller="cablingDiagramController">
         <div class="grid">
+        	<div class="header">
+	        	<div class="grid__item one-half">
+	        		<img src="http://agentanswercenter.directv.com/en-us/res/system/img/Logo_DTV_ATT.png">
+	            </div>
+	            <div class="grid__item one-half">
+	                <h1 class="tool-title">Cabling Diagram</h1>
+	            </div>
+	        </div>
             <div class="grid__item palm-one-whole lap--one-third portable--one-quarter desk--one-fifth grey">
                 <h2>Receiver</h2>
                 <select ng-options="receiver.model for receiver in receiverArray" ng-model="optionSel">
@@ -63,9 +72,12 @@
                                 <div class="diagram">
                                     <div class="grid--full">
                                         <div class="grid__item four-fifths devices">
-                                            <div class="tv">TV</div>
+                                            <div class="tv">
+                                                <img ng-src="img/tvpanel.png" data-large="img/tvpanel.png" magnify="zoomrange: [4,5], magnifiersize :  [150, 150]" />
+                                            </div>
                                             <div class="rec">
-                                                <span ng-bind="optionSel.model | ternary:'DIRECTV'"></span>
+                                                <span ng-if="!optionSel.model">DIRECTV</span><br />
+                                                <img ng-if="optionSel.model" ng-src="http://agentanswercenterstg.directv.com/en-us/res/system/img/{{optionSel.model}}_back.jpg" data-large="http://agentanswercenterstg.directv.com/en-us/res/system/img/{{optionSel.model}}_back.jpg" magnify="zoomrange: [4,5], magnifiersize :  [150, 150]"  />
                                             </div>
                                             <div ng-repeat="device in item.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
                                         </div><!-- 
@@ -92,7 +104,12 @@
                                 </div>
                             </div>
                             <div class="grid__item palm--one-whole one-half">
-                                <p ng-repeat="(no, step) in item.instructions track by $index" class="instructions step-{{no + 1}}"><img src="http://agentanswercenterstg.directv.com/en-us/res/images/conn_{{item.connection[no] | lowercase}}.jpg" /><b>{{no + 1}}.</b> <span compile="step"></span></p>
+                                <div ng-repeat="(no, step) in item.instructions track by $index" class="instructions step-{{no + 1}}">
+                                    <div class="conBorder">
+                                        <img ng-src="http://agentanswercenterstg.directv.com/en-us/res/images/conn_{{item.connection[no]}}.jpg" data-large="http://agentanswercenterstg.directv.com/en-us/res/images/conn_{{item.connection[no]}}.jpg" magnify />
+                                    </div>
+                                    <b>{{no + 1}}.</b> <span compile="step"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
