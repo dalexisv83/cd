@@ -11,6 +11,7 @@
     <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/angular.js"></script>
     <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/jquery.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/history.js"></script>
     <script type="text/javascript" src="controller/controller.js"></script>
     <script type="text/javascript" src="class/class.js"></script>
     <script type="text/javascript" src="data/data.js"></script>
@@ -27,7 +28,7 @@
         <div class="grid">
             <div class="grid__item palm-one-whole lap--one-third portable--one-quarter desk--one-fifth grey">
                 <h2>Receiver</h2>
-                <select ng-options="receiver.model for receiver in receiverArray" ng-model="optionSel" ng-change="vm.dropDownChange(optionSel)" id="receiver_models">
+                <select ng-options="receiver.model for receiver in receiverArray" ng-model="optionSel" ng-change="a()" id="receiver_models">
                     <option value="">Choose Receiver Model</option>
                 </select>
                 <h2>Devices</h2>
@@ -39,7 +40,7 @@
                     </li>
                     <li class="no-decoration" ng-repeat="tech in deviceArray">
                         <label>
-                            <input type="checkbox" ng-model="tech.on" value="{{tech.name}}" ng-change="vm.checkBoxClick(tech)" />{{tech.name}}
+                            <input type="checkbox" ng-model="tech.on" name="{{tech.name}}" ng-change="b()" />{{tech.name}}
                         </label>
                     </li>
                 </ul>
@@ -47,7 +48,7 @@
                 <ul>
                     <li class="no-decoration" ng-repeat="tech in connectionArray | matchReceiverConnections:optionSel">
                         <label>
-                            <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" value="{{tech.name}}" ng-change="vm.checkBoxClick(tech)" /><span ng-class="{'disabled': tech.disabled}">{{tech.name}}</span>
+                            <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" name="{{tech.name}}" ng-change="c()" /><span ng-class="{'disabled': tech.disabled}">{{tech.name}}</span>
                         </label>
                     </li>
                 </ul>

@@ -123,3 +123,72 @@ var anyMatchInArray = function (target, toMatch) {
 
     return found;
 };
+
+// gets the current url and tokenizes all values in an array
+var getUrlParameter = function() {
+    var url = window.location.href;
+    var urlElements = [];
+    var a = url.split('?');
+    var sPageURL = decodeURIComponent(a[1]), 
+    sURLVariables = sPageURL.split('&'), 
+    sParameterName,
+    i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (!(sParameterName[0] in urlElements))
+            urlElements.push(sParameterName);
+
+    }
+    return urlElements;
+};
+
+// monitors and exchanges url elements happened to be in shorts object
+var getUrlFriendlyString = function (shorts,p){
+    p = p.toLowerCase();
+    for( var prop in shorts ) {
+        if( shorts[ prop ] === p )
+            return prop;
+    }
+    return p;
+};
+
+// BUILDS OUR URL
+// if a checkbox click event happens, this function will include its name in current url
+getCheckBoxClick = function (s,q) {
+        var newString = "";
+        var newUrl = "";        
+        var oldUrl = window.location.href;
+        var a = oldUrl.split('?');
+        var oldUrl = "?" + a[1];
+        for(var i=0; i<q.length; i++) { // loop through all checkboxes in the page
+            if(q[i].on === true){ // checkboxes that are checked
+                if(oldUrl.indexOf(getUrlFriendlyString(s,q[i].name)) == -1){ // if current url did not already have the chosen checkbox value
+                    var string = getUrlFriendlyString(s,q[i].name);
+                    oldUrl += "&="+string;
+                }
+                //normalizes hash issue in IE8
+                newString = oldUrl.replace("#",'');
+            }
+            else // checkboxes that are not checked
+            {
+                if(oldUrl.indexOf(getUrlFriendlyString(s,q[i].name)) != -1){ // if current url has the chosen checkbox value
+                    var string = getUrlFriendlyString(s,q[i].name);
+                    newString = oldUrl.replace("&="+string,'');
+                }
+            }
+        }
+        window.history.pushState("", "", newString);          
+};
+
+// BUILDS OUR URL
+// if a selection is made from receiver dropdown this function will include its model name in current url
+getDropDownChange = function (p){
+        var newString = "";
+        var oldUrl = window.location.href;
+        if(typeof p != 'undefined'){
+            newString = "?rec="+p.model;
+            //normalizes hash issue in IE8
+            newString = newString.replace("#",'');
+            window.history.pushState("", "", newString);
+    }
+}

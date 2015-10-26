@@ -305,3 +305,10 @@ receiverData = [{
         "Digital Coax Audio": true
     }
 }]
+
+
+shorts = {"audio":"audio receiver",
+    "composite":"composite/rca",
+    "component":"component/rgb/yprpb",
+    "digitalcoax":"digital coax audio",
+    "digitalaudio":"digital audio (optical)"};
