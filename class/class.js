@@ -124,7 +124,11 @@ var anyMatchInArray = function (target, toMatch) {
     return found;
 };
 
-// gets the current url and tokenizes all values in an array
+// gets the current url and tokenizes all values in a returning array
+// returning array structure is as follows:
+// ["key":"value"] ex: key --> rec , value --> HR44
+// in case of checkboxes, the key will be "empty" and only value will be saved in returning array
+// ex: ["","coaxial"] 
 var getUrlParameter = function() {
     var url = window.location.href;
     var urlElements = [];
@@ -145,7 +149,7 @@ var getUrlParameter = function() {
 // monitors and exchanges url elements happened to be in shorts object
 var getUrlFriendlyString = function (shorts,p){
     p = p.toLowerCase();
-    for( var prop in shorts ) {
+    for( var prop in shorts ){
         if( shorts[ prop ] === p )
             return prop;
     }
@@ -153,17 +157,19 @@ var getUrlFriendlyString = function (shorts,p){
 };
 
 // BUILDS OUR URL
-// if a checkbox click event happens, this function will include its name in current url
-getCheckBoxClick = function (s,q) {
+// if a checkbox click event happens, this function will include its name in current url AND updates the browser's address bar
+// checkboxes will be an array of checkbox objects
+// shorts will pass shorts array from data.js containing ONLY non-url-friendly checkbox selections and their url-friendly replacement.
+getCheckBoxClick = function (shorts,checkboxes) {
         var newString = "";
         var newUrl = "";        
         var oldUrl = window.location.href;
         var a = oldUrl.split('?');
-        var oldUrl = "?" + a[1];
-        for(var i=0; i<q.length; i++) { // loop through all checkboxes in the page
-            if(q[i].on === true){ // checkboxes that are checked
-                if(oldUrl.indexOf(getUrlFriendlyString(s,q[i].name)) == -1){ // if current url did not already have the chosen checkbox value
-                    var string = getUrlFriendlyString(s,q[i].name);
+        var oldUrl = "?" + a[1]; // oldUrl would have current url variables after ? (including "?").
+        for(var i=0; i<checkboxes.length; i++) { // loop through all checkboxes in the page
+            if(checkboxes[i].on === true){ // checkboxes that are checked
+                if(oldUrl.indexOf(getUrlFriendlyString(shorts,checkboxes[i].name)) == -1){ // if current url did not have the chosen checkbox value...
+                    var string = getUrlFriendlyString(shorts,checkboxes[i].name);
                     oldUrl += "&="+string;
                 }
                 //normalizes hash issue in IE8
@@ -171,8 +177,8 @@ getCheckBoxClick = function (s,q) {
             }
             else // checkboxes that are not checked
             {
-                if(oldUrl.indexOf(getUrlFriendlyString(s,q[i].name)) != -1){ // if current url has the chosen checkbox value
-                    var string = getUrlFriendlyString(s,q[i].name);
+                if(oldUrl.indexOf(getUrlFriendlyString(shorts,checkboxes[i].name)) != -1){ // if current url has the chosen checkbox value
+                    var string = getUrlFriendlyString(shorts,checkboxes[i].name);
                     newString = oldUrl.replace("&="+string,'');
                 }
             }
@@ -181,12 +187,12 @@ getCheckBoxClick = function (s,q) {
 };
 
 // BUILDS OUR URL
-// if a selection is made from receiver dropdown this function will include its model name in current url
-getDropDownChange = function (p){
+// if a selection is made from receiver dropdown list, this function will include its model name in current url and updates the browser's address bar
+getDropDownChange = function (receiver){
         var newString = "";
         var oldUrl = window.location.href;
-        if(typeof p != 'undefined'){
-            newString = "?rec="+p.model;
+        if(typeof receiver != 'undefined'){
+            newString = "?rec="+receiver.model;
             //normalizes hash issue in IE8
             newString = newString.replace("#",'');
             window.history.pushState("", "", newString);
