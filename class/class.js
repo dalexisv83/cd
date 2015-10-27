@@ -180,6 +180,7 @@ getCheckBoxClick = function (shorts,checkboxes) {
                 if(oldUrl.indexOf(getUrlFriendlyString(shorts,checkboxes[i].name)) != -1){ // if current url has the chosen checkbox value
                     var string = getUrlFriendlyString(shorts,checkboxes[i].name);
                     newString = oldUrl.replace("&="+string,'');
+                    oldUrl = newString;
                 }
             }
         }
