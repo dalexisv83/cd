@@ -164,8 +164,8 @@ getCheckBoxClick = function (shorts,checkboxes) {
         var newString = "";
         var newUrl = "";        
         var oldUrl = window.location.href;
-        var a = oldUrl.split('?');
-        var oldUrl = "?" + a[1]; // oldUrl would have current url variables after ? (including "?").
+        var a = oldUrl.split('#?');
+        var oldUrl = "#?" + a[1]; // oldUrl would have current url variables after ? (including "?").
         for(var i=0; i<checkboxes.length; i++) { // loop through all checkboxes in the page
             if(checkboxes[i].on === true){ // checkboxes that are checked
                 if(oldUrl.indexOf(getUrlFriendlyString(shorts,checkboxes[i].name)) == -1){ // if current url did not have the chosen checkbox value...
@@ -184,18 +184,24 @@ getCheckBoxClick = function (shorts,checkboxes) {
                 }
             }
         }
+        // adjustment for Chrome not having the hash
+        // apparently urls taken from chrome (without below adjustment) to IE8 caused issues (10/29/15)
+        if(newString.length > 0 && newString.substr(0,1) != '#')
+            newString = "#"+newString;
         window.history.pushState("", "", newString);          
 };
 
 // BUILDS OUR URL
 // if a selection is made from receiver dropdown list, this function will include its model name in current url and updates the browser's address bar
 getDropDownChange = function (receiver){
-        var newString = "";
-        var oldUrl = window.location.href;
-        if(typeof receiver != 'undefined'){
-            newString = "?rec="+receiver.model;
-            //normalizes hash issue in IE8
-            newString = newString.replace("#",'');
-            window.history.pushState("", "", newString);
+    var newString = "";
+    var oldUrl = window.location.href;
+    if(typeof receiver != 'undefined'){
+        newString = "?rec="+receiver.model;
     }
+    // adjustment for Chrome not having the hash
+    // apparently urls taken from chrome (without below adjustment) to IE8 caused issues (10/29/15)
+    if(newString.length > 0 && newString.substr(0,1) != '#')
+        newString = "#"+newString;
+    window.history.pushState("", "", newString);
 }
