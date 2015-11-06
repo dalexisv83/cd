@@ -232,3 +232,43 @@
 .modal .height-8 .vert {
   height: 1053px;
 }
+
+/* line 108, ../sass/lines.scss */
+.level-1 .vert, .level-1 .arrow {
+  margin-top: 0px;
+}
+
+/* line 112, ../sass/lines.scss */
+.level-2 .vert, .level-2 .arrow {
+  margin-top: 43px;
+}
+
+/* line 112, ../sass/lines.scss */
+.level-3 .vert, .level-3 .arrow {
+  margin-top: 86px;
+}
+
+/* line 112, ../sass/lines.scss */
+.level-4 .vert, .level-4 .arrow {
+  margin-top: 129px;
+}
+
+/* line 112, ../sass/lines.scss */
+.level-5 .vert, .level-5 .arrow {
+  margin-top: 172px;
+}
+
+/* line 112, ../sass/lines.scss */
+.level-6 .vert, .level-6 .arrow {
+  margin-top: 215px;
+}
+
+/* line 112, ../sass/lines.scss */
+.level-7 .vert, .level-7 .arrow {
+  margin-top: 258px;
+}
+
+/* line 112, ../sass/lines.scss */
+.level-8 .vert, .level-8 .arrow {
+  margin-top: 301px;
+}

@@ -99,3 +99,18 @@ $plusHeight: 43px * 3;
 		}
 	}
 }
+
+$origMargin: 0px;
+$plusMargin: 43px;
+
+@for $i from 1 through 8 {
+	@if $i == 1 {
+		.level-#{$i} .vert, .level-#{$i} .arrow {
+			margin-top: $origMargin;
+		}
+	} @else {
+		.level-#{$i} .vert, .level-#{$i} .arrow {
+			margin-top: $origMargin + $plusMargin * ($i - 1);
+		}
+	}
+}
