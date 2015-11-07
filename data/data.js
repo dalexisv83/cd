@@ -202,7 +202,7 @@ receiverData = [{
     "model": "C31",
     "compatible": {
         "HDMI": true,
-        "Component": "Via 10-Pin Mini Din",
+        "Component": true,
         "10-Pin Mini Din": true,
         "Composite": false,
         "S-Video": false,
@@ -214,7 +214,7 @@ receiverData = [{
     "model": "C41",
     "compatible": {
         "HDMI": true,
-        "Component": "Via 10-Pin Mini Din",
+        "Component": true,
         "10-Pin Mini Din": true,
         "Composite": false,
         "S-Video": false,
@@ -274,7 +274,7 @@ receiverData = [{
     "model": "H25",
     "compatible": {
         "HDMI": true,
-        "Component": "Via 10-Pin Mini Din",
+        "Component": true,
         "10-Pin Mini Din": true,
         "Composite": true,
         "S-Video": false,
