@@ -272,3 +272,36 @@
 .level-8 .vert, .level-8 .arrow {
   margin-top: 301px;
 }
+
+/* line 124, ../sass/lines.scss */
+.modal .level-1 .vert, .modal .level-1 .arrow {
+  margin-top: 0px;
+}
+/* line 128, ../sass/lines.scss */
+.modal .level-2 .vert, .modal .level-2 .arrow {
+  margin-top: 129px;
+}
+/* line 128, ../sass/lines.scss */
+.modal .level-3 .vert, .modal .level-3 .arrow {
+  margin-top: 258px;
+}
+/* line 128, ../sass/lines.scss */
+.modal .level-4 .vert, .modal .level-4 .arrow {
+  margin-top: 387px;
+}
+/* line 128, ../sass/lines.scss */
+.modal .level-5 .vert, .modal .level-5 .arrow {
+  margin-top: 516px;
+}
+/* line 128, ../sass/lines.scss */
+.modal .level-6 .vert, .modal .level-6 .arrow {
+  margin-top: 645px;
+}
+/* line 128, ../sass/lines.scss */
+.modal .level-7 .vert, .modal .level-7 .arrow {
+  margin-top: 774px;
+}
+/* line 128, ../sass/lines.scss */
+.modal .level-8 .vert, .modal .level-8 .arrow {
+  margin-top: 903px;
+}

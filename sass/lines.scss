@@ -114,3 +114,20 @@ $plusMargin: 43px;
 		}
 	}
 }
+
+$origMargin: 0px * 3;
+$plusMargin: 43px * 3;
+
+.modal {
+	@for $i from 1 through 8 {
+		@if $i == 1 {
+			.level-#{$i} .vert, .level-#{$i} .arrow {
+				margin-top: $origMargin;
+			}
+		} @else {
+			.level-#{$i} .vert, .level-#{$i} .arrow {
+				margin-top: $origMargin + $plusMargin * ($i - 1);
+			}
+		}
+	}
+}
