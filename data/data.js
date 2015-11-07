@@ -8,12 +8,12 @@ data = [{
     ]
 }, {
     "detail": false,
-    "connection": ["Composite/RCA"],
+    "connection": ["Composite"],
     "device": [],
     "setup": [[2,1]]
 }, {
     "detail": false,
-    "connection": ["S-Video", "Composite/RCA"],
+    "connection": ["S-Video", "Composite"],
     "device": [],
     "setup": [[2,1], [2,1]],
     "instructions": [
@@ -22,22 +22,17 @@ data = [{
     ]
 }, {
     "detail": false,
-    "connection": ["S-Video"],
+    "connection": ["Component"],
     "device": [],
     "setup": [[2,1]]
 }, {
     "detail": false,
-    "connection": ["Component/RGB/YPrPb"],
-    "device": [],
-    "setup": [[2,1]]
-}, {
-    "detail": false,
-    "connection": ["Component/RGB/YPrPb", "Digital Coax Audio"],
+    "connection": ["Component", "Digital Coax Audio"],
     "device": [],
     "setup": [[2,1], [2,1]]
 }, {
     "detail": false,
-    "connection": ["Component/RGB/YPrPb", "Digital Audio (Optical)"],
+    "connection": ["Component", "Digital Audio (Optical)"],
     "device": [],
     "setup": [[2,1], [2,1]]
 }, {
@@ -50,27 +45,118 @@ data = [{
     ]
 }, {
     "detail": false,
-    "connection": ["Composite/RCA", "Composite/RCA"],
+    "connection": ["Composite", "Composite"],
     "device": ["VCR"],
-    "setup": [[2,1], [3,1]],
+    "setup": [[2,3], [3,1]],
     "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable.",
-        "Connect {{item.device[0]}} to TV with {{item.connection[no]}} cable."
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
+        "Connect {{item.device[0]}} to TV with {{item.connection[no]}} cable.",
+        "Cycle input on TV to appropriate AV input.",
+        "Note: VCR may need to be on for satellite signal to be view on TV. Satellite receiver and VCR will share same AV input."
     ]
 }, {
     "detail": false,
+    "connection": ["Composite", "S-Video", "Composite", "S-Video"],
+    "device": ["VCR"],
+    "setup": [[2,3], [2,3], [3,1], [3,1]],
+    "instructions": [
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
+        "Connect {{item.device[0]}} to TV with {{item.connection[no]}} cable.",
+        "Connect {{item.device[0]}} to TV with {{item.connection[no]}} cable.",
+        "Cycle input on TV to appropriate AV input.",
+        "Note: VCR may need to be on for satellite signal to be view on TV. Satellite receiver and VCR will share same AV input."
+    ]
+}, {
+    "detail": false,
+    "connection": ["Coaxial", "Coaxial"],
+    "device": ["VCR"],
+    "setup": [[2,3], [3,1]],
+    "instructions": [
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
+        "Connect {{item.device[0]}} to TV with {{item.connection[no]}} cable.",
+        "Cycle input on TV to appropriate AV input.",
+        "Note: VCR may need to be on for satellite signal to be view on TV. Satellite receiver and VCR will share same AV input."
+    ]
+}, {
+    "detail": false,
+    "connection": ["HDMI"],
+    "device": ["Blu-ray/DVD"],
+    "setup": [[2,1], [3,1]],
+}, {
+    "detail": false,
+    "connection": ["Digital Coax Audio", "Component", "Digital Coax Audio", "Component"],
+    "device": ["Blu-ray/DVD"],
+    "setup": [[2,1], [2,1], [3,1], [3,1]],
+}, {
+    "detail": false,
+    "connection": ["Digital Audio (Optical)", "Component", "Digital Audio (Optical)", "Component"],
+    "device": ["Blu-ray/DVD"],
+    "setup": [[2,1], [2,1], [3,1], [3,1]],
+}, {
+    "detail": false,
+    "connection": ["Composite"],
+    "device": ["Blu-ray/DVD"],
+    "setup": [[2,1], [3,1]],
+}, {
+    "detail": false,
+    "connection": ["Composite", "S-Video", "Composite", "S-Video"],
+    "device": ["Blu-ray/DVD"],
+    "setup": [[2,1], [2,1], [3,1], [3,1]],
+}, {
+    "detail": false,
+    "connection": ["HDMI"],
+    "device": ["Sound Bar"],
+    "setup": [[2,3], [3,1]],
+}, {
+    "detail": false,
+    "connection": ["Digital Coax Audio", "Component"],
+    "device": ["Sound Bar"],
+    "setup": [[2,3], [2,1]],
+}, {
+    "detail": false,
+    "connection": ["Digital Audio (Optical)", "Component"],
+    "device": ["Sound Bar"],
+    "setup": [[2,3], [2,1]],
+}, {
+    "detail": false,
+    "connection": ["Composite", "Composite"],
+    "device": ["Sound Bar"],
+    "setup": [[2,3], [2,1]],
+}, {
+    "detail": false,
+    "connection": ["HDMI"],
+    "device": ["Audio Receiver"],
+    "setup": [[2,3], [3,1]],
+}, {
+    "detail": false,
+    "connection": ["Digital Coax Audio", "Component"],
+    "device": ["Audio Receiver"],
+    "setup": [[2,3], [3,1]],
+}, {
+    "detail": false,
+    "connection": ["Digital Audio (Optical)", "Component"],
+    "device": ["Audio Receiver"],
+    "setup": [[2,3], [3,1]],
+}, {
+    "detail": false,
+    "connection": ["Composite", "Composite"],
+    "device": ["Audio Receiver"],
+    "setup": [[2,3], [3,1]],
+}, {
+    "detail": false,
     "connection": ["HDMI", "HDMI", "HDMI"],
-    "device": ["Blu-ray", "Audio Receiver"],
-    "setup": [[2,1], [3,1], [1,4]]
+    "device": ["Blu-ray/DVD", "Audio Receiver"],
+    "setup": [[4,1], [2,4], [3,4]]
 }]
 
 receiverData = [{
     "model": "D11",
     "compatible": {
         "HDMI": false,
-        "Component/RGB/YPrPb": false,
+        "Component": false,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": true,
         "Digital Audio (Optical)": false,
@@ -80,9 +166,9 @@ receiverData = [{
     "model": "D12",
     "compatible": {
         "HDMI": false,
-        "Component/RGB/YPrPb": false,
+        "Component": false,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": true,
         "Digital Audio (Optical)": false,
@@ -92,9 +178,9 @@ receiverData = [{
     "model": "HR34",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -104,9 +190,9 @@ receiverData = [{
     "model": "HR44",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -116,9 +202,9 @@ receiverData = [{
     "model": "C31",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": "Via 10-Pin Mini Din",
+        "Component": "Via 10-Pin Mini Din",
         "10-Pin Mini Din": true,
-        "Composite/RCA": false,
+        "Composite": false,
         "S-Video": false,
         "Coaxial": false,
         "Digital Audio (Optical)": false,
@@ -128,9 +214,9 @@ receiverData = [{
     "model": "C41",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": "Via 10-Pin Mini Din",
+        "Component": "Via 10-Pin Mini Din",
         "10-Pin Mini Din": true,
-        "Composite/RCA": false,
+        "Composite": false,
         "S-Video": false,
         "Coaxial": false,
         "Digital Audio (Optical)": false,
@@ -140,9 +226,9 @@ receiverData = [{
     "model": "H20",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -152,9 +238,9 @@ receiverData = [{
     "model": "H21",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -164,9 +250,9 @@ receiverData = [{
     "model": "H23",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -176,9 +262,9 @@ receiverData = [{
     "model": "H24",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": false,
         "Coaxial": false,
         "Digital Audio (Optical)": false,
@@ -188,9 +274,9 @@ receiverData = [{
     "model": "H25",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": "Via 10-Pin Mini Din",
+        "Component": "Via 10-Pin Mini Din",
         "10-Pin Mini Din": true,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": false,
         "Coaxial": false,
         "Digital Audio (Optical)": false,
@@ -200,9 +286,9 @@ receiverData = [{
     "model": "HR20",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -212,9 +298,9 @@ receiverData = [{
     "model": "HR21",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -224,9 +310,9 @@ receiverData = [{
     "model": "HR22",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -236,9 +322,9 @@ receiverData = [{
     "model": "HR23",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -248,9 +334,9 @@ receiverData = [{
     "model": "HR24",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -260,9 +346,9 @@ receiverData = [{
     "model": "R15",
     "compatible": {
         "HDMI": false,
-        "Component/RGB/YPrPb": false,
+        "Component": false,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": true,
         "Digital Audio (Optical)": true,
@@ -272,9 +358,9 @@ receiverData = [{
     "model": "R16",
     "compatible": {
         "HDMI": false,
-        "Component/RGB/YPrPb": false,
+        "Component": false,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": true,
         "Digital Audio (Optical)": true,
@@ -284,9 +370,9 @@ receiverData = [{
     "model": "TiVo",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
@@ -296,9 +382,9 @@ receiverData = [{
     "model": "HG1X",
     "compatible": {
         "HDMI": true,
-        "Component/RGB/YPrPb": true,
+        "Component": true,
         "10-Pin Mini Din": false,
-        "Composite/RCA": true,
+        "Composite": true,
         "S-Video": true,
         "Coaxial": false,
         "Digital Audio (Optical)": true,
