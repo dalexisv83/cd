@@ -80,10 +80,10 @@
                 })
                 return a;
             }
-            var c = getRecConnections(optSel.compatible);
+            var c = optSel.compatible;
             angular.forEach(a, function(value, key) {
                 value.disabled = false;
-                if (jQuery.inArray(value.name, c) == -1) {
+                if (c[value.name] != true) {
                     value.disabled = true;
                     value.on = false; // unchecks disabled connections. Maybe filter should ignore and keep users input?
                 }
@@ -94,7 +94,14 @@
     cablingDiagram.filter('spcToHyphen', function() {
         return function(input) {
             if (input) {
-                return input.replace(/\s+/g, '-');
+                return input.replace(/\s+/g, '-').replace("(", '').replace(")", '');
+            }
+        }
+    })
+    cablingDiagram.filter('convert', function() {
+        return function(input, obj) {
+            if (input) {
+                return obj[input];
             }
         }
     })

@@ -82,21 +82,6 @@ getCheckedDevices = function(devices) {
     return checked;
 };
 
-getRecConnections = function(select) {
-    if (select == undefined)
-        return null;
-    var keys = [];
-    jQuery.each(select, function(key, value) {
-        keys.push(key)
-    });
-    var filteredKeys = jQuery.grep(keys, function(key) {
-        if (select[key] == true)
-            return select[key];
-    });
-    filteredKeys.sort();
-    return filteredKeys;
-}
-
 var anyMatchInArray = function (target, toMatch) {
     "use strict";
 

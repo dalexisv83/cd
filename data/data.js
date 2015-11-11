@@ -1,6 +1,24 @@
+deviceLgnd = {
+	3: "VCR",
+	4: "Blu-ray/DVD",
+	5: "Sound Bar",
+	6: "Audio Receiver"
+}
+
+connectionLgnd = {
+	1: "HDMI",
+	2: "Component",
+	3: "10-Pin Mini Din",
+	4: "Composite",
+	5: "S-Video",
+	6: "Coaxial",
+	7: "Digital Audio (Optical)",
+	8: "Digital Coax Audio",
+}
+
 data = [{
     "detail": false,
-    "connection": ["Coaxial"],
+    "connection": [6],
     "device": [],
     "setup": [[2,1]],
     "instructions": [
@@ -8,12 +26,15 @@ data = [{
     ]
 }, {
     "detail": false,
-    "connection": ["Composite"],
+    "connection": [4],
     "device": [],
-    "setup": [[2,1]]
+    "setup": [[2,1]],
+    "instructions": [
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
+    ]
 }, {
     "detail": false,
-    "connection": ["S-Video", "Composite"],
+    "connection": [5, 4],
     "device": [],
     "setup": [[2,1], [2,1]],
     "instructions": [
@@ -22,22 +43,7 @@ data = [{
     ]
 }, {
     "detail": false,
-    "connection": ["Component"],
-    "device": [],
-    "setup": [[2,1]]
-}, {
-    "detail": false,
-    "connection": ["Component", "Digital Coax Audio"],
-    "device": [],
-    "setup": [[2,1], [2,1]]
-}, {
-    "detail": false,
-    "connection": ["Component", "Digital Audio (Optical)"],
-    "device": [],
-    "setup": [[2,1], [2,1]]
-}, {
-    "detail": false,
-    "connection": ["HDMI"],
+    "connection": [2],
     "device": [],
     "setup": [[2,1]],
     "instructions": [
@@ -45,8 +51,34 @@ data = [{
     ]
 }, {
     "detail": false,
-    "connection": ["Composite", "Composite"],
-    "device": ["VCR"],
+    "connection": [2, 8],
+    "device": [],
+    "setup": [[2,1], [2,1]],
+    "instructions": [
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable.",
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
+    ]
+}, {
+    "detail": false,
+    "connection": [2, 7],
+    "device": [],
+    "setup": [[2,1], [2,1]],
+    "instructions": [
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable.",
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
+    ]
+}, {
+    "detail": false,
+    "connection": [1],
+    "device": [],
+    "setup": [[2,1]],
+    "instructions": [
+        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
+    ]
+}, {
+    "detail": false,
+    "connection": [4, 4],
+    "device": [3],
     "setup": [[2,3], [3,1]],
     "instructions": [
         "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
@@ -56,8 +88,8 @@ data = [{
     ]
 }, {
     "detail": false,
-    "connection": ["Composite", "S-Video", "Composite", "S-Video"],
-    "device": ["VCR"],
+    "connection": [4, 5, 4, 5],
+    "device": [3],
     "setup": [[2,3], [2,3], [3,1], [3,1]],
     "instructions": [
         "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
@@ -69,8 +101,8 @@ data = [{
     ]
 }, {
     "detail": false,
-    "connection": ["Coaxial", "Coaxial"],
-    "device": ["VCR"],
+    "connection": [6, 6],
+    "device": [3],
     "setup": [[2,3], [3,1]],
     "instructions": [
         "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
@@ -80,314 +112,338 @@ data = [{
     ]
 }, {
     "detail": false,
-    "connection": ["HDMI"],
-    "device": ["Blu-ray/DVD"],
+    "connection": [1],
+    "device": [4],
     "setup": [[2,1], [3,1]],
 }, {
     "detail": false,
-    "connection": ["Digital Coax Audio", "Component", "Digital Coax Audio", "Component"],
-    "device": ["Blu-ray/DVD"],
+    "connection": [8, 2, 8, 2],
+    "device": [4],
     "setup": [[2,1], [2,1], [3,1], [3,1]],
 }, {
     "detail": false,
-    "connection": ["Digital Audio (Optical)", "Component", "Digital Audio (Optical)", "Component"],
-    "device": ["Blu-ray/DVD"],
+    "connection": [7, 2, 7, 2],
+    "device": [4],
     "setup": [[2,1], [2,1], [3,1], [3,1]],
 }, {
     "detail": false,
-    "connection": ["Composite"],
-    "device": ["Blu-ray/DVD"],
+    "connection": [4],
+    "device": [4],
     "setup": [[2,1], [3,1]],
 }, {
     "detail": false,
-    "connection": ["Composite", "S-Video", "Composite", "S-Video"],
-    "device": ["Blu-ray/DVD"],
+    "connection": [4, 5, 4, 5],
+    "device": [4],
     "setup": [[2,1], [2,1], [3,1], [3,1]],
 }, {
     "detail": false,
-    "connection": ["HDMI"],
-    "device": ["Sound Bar"],
+    "connection": [1],
+    "device": [5],
     "setup": [[2,3], [3,1]],
 }, {
     "detail": false,
-    "connection": ["Digital Coax Audio", "Component"],
-    "device": ["Sound Bar"],
+    "connection": [8, 2],
+    "device": [5],
     "setup": [[2,3], [2,1]],
 }, {
     "detail": false,
-    "connection": ["Digital Audio (Optical)", "Component"],
-    "device": ["Sound Bar"],
+    "connection": [7, 2],
+    "device": [5],
     "setup": [[2,3], [2,1]],
 }, {
     "detail": false,
-    "connection": ["Composite", "Composite"],
-    "device": ["Sound Bar"],
+    "connection": [4, 4],
+    "device": [5],
     "setup": [[2,3], [2,1]],
 }, {
     "detail": false,
-    "connection": ["HDMI"],
-    "device": ["Audio Receiver"],
+    "connection": [1],
+    "device": [6],
     "setup": [[2,3], [3,1]],
 }, {
     "detail": false,
-    "connection": ["Digital Coax Audio", "Component"],
-    "device": ["Audio Receiver"],
+    "connection": [8, 2],
+    "device": [6],
     "setup": [[2,3], [3,1]],
 }, {
     "detail": false,
-    "connection": ["Digital Audio (Optical)", "Component"],
-    "device": ["Audio Receiver"],
+    "connection": [7, 2],
+    "device": [6],
     "setup": [[2,3], [3,1]],
 }, {
     "detail": false,
-    "connection": ["Composite", "Composite"],
-    "device": ["Audio Receiver"],
+    "connection": [4, 4],
+    "device": [6],
     "setup": [[2,3], [3,1]],
 }, {
     "detail": false,
-    "connection": ["HDMI", "HDMI", "HDMI"],
-    "device": ["Blu-ray/DVD", "Audio Receiver"],
+    "connection": [1, 1, 1],
+    "device": [4, 6],
     "setup": [[4,1], [2,4], [3,4]]
 }]
 
 receiverData = [{
     "model": "D11",
     "compatible": {
-        "HDMI": false,
-        "Component": false,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": true,
-        "Digital Audio (Optical)": false,
-        "Digital Coax Audio ": false
+        1: false,
+        2: false,
+        3: false,
+        4: true,
+        5: true,
+        6: true,
+        7: false,
+        8: false
     }
 }, {
     "model": "D12",
     "compatible": {
-        "HDMI": false,
-        "Component": false,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": true,
-        "Digital Audio (Optical)": false,
-        "Digital Coax Audio": false
+        1: false,
+        2: false,
+        3: false,
+        4: true,
+        5: true,
+        6: true,
+        7: false,
+        8: false
     }
 }, {
     "model": "HR34",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "HR44",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
+    }
+}, {
+    "model": "HR54",
+    "compatible": {
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "C31",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": true,
-        "Composite": false,
-        "S-Video": false,
-        "Coaxial": false,
-        "Digital Audio (Optical)": false,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: true,
+        4: false,
+        5: false,
+        6: false,
+        7: false,
+        8: true
     }
 }, {
     "model": "C41",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": true,
-        "Composite": false,
-        "S-Video": false,
-        "Coaxial": false,
-        "Digital Audio (Optical)": false,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: true,
+        4: false,
+        5: false,
+        6: false,
+        7: false,
+        8: true
+    }
+}, {
+    "model": "C51",
+    "compatible": {
+        1: true,
+        2: true,
+        3: true,
+        4: false,
+        5: false,
+        6: false,
+        7: false,
+        8: true
     }
 }, {
     "model": "H20",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": false
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: false
     }
 }, {
     "model": "H21",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "H23",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "H24",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": false,
-        "Coaxial": false,
-        "Digital Audio (Optical)": false,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: false,
+        6: false,
+        7: false,
+        8: true
     }
 }, {
     "model": "H25",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": true,
-        "Composite": true,
-        "S-Video": false,
-        "Coaxial": false,
-        "Digital Audio (Optical)": false,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: true,
+        4: true,
+        5: false,
+        6: false,
+        7: false,
+        8: true
     }
 }, {
     "model": "HR20",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "HR21",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "HR22",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "HR23",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "HR24",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "R15",
     "compatible": {
-        "HDMI": false,
-        "Component": false,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": true,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": false
+        1: false,
+        2: false,
+        3: false,
+        4: true,
+        5: true,
+        6: true,
+        7: true,
+        8: false
     }
 }, {
     "model": "R16",
     "compatible": {
-        "HDMI": false,
-        "Component": false,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": true,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": false
+        1: false,
+        2: false,
+        3: false,
+        4: true,
+        5: true,
+        6: true,
+        7: true,
+        8: false
     }
 }, {
     "model": "TiVo",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "HG1X",
     "compatible": {
-        "HDMI": true,
-        "Component": true,
-        "10-Pin Mini Din": false,
-        "Composite": true,
-        "S-Video": true,
-        "Coaxial": false,
-        "Digital Audio (Optical)": true,
-        "Digital Coax Audio": true
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }]
