@@ -119,6 +119,7 @@
             restrict: 'A',
             link: function(scope, element, attrs) {
                 if (jQuery.fn.imagezoomsl) {
+                    attrs.magnify = "magnifiereffectanimate: 'fadeIn', " + attrs.magnify;
                     var props = eval('({' + attrs.magnify + '})');
                     $(element).imagezoomsl(props);
                 }
