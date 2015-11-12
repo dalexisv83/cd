@@ -46,17 +46,17 @@
                             <input type="checkbox" checked disabled /><span>TV</span>
                         </label>
                     </li>
-                    <li class="no-decoration" ng-repeat="tech in deviceArray">
+                    <li class="no-decoration" ng-repeat="tech in deviceArray | orderBy">
                         <label>
-                            <input type="checkbox" ng-model="tech.on" />{{tech.name}}
+                            <input type="checkbox" ng-model="tech.on" />{{tech.name | convert:deviceLegend}}
                         </label>
                     </li>
                 </ul>
                 <h2>Connections</h2>
                 <ul>
-                    <li class="no-decoration" ng-repeat="tech in connectionArray | matchReceiverConnections:optionSel">
+                    <li class="no-decoration" ng-repeat="tech in connectionArray | orderBy: 'name' | matchReceiverConnections:optionSel">
                         <label>
-                            <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" /><span ng-class="{'disabled': tech.disabled}">{{tech.name}}</span> <span ng-if="optionSel.compatible['10-Pin Mini Din'] && tech.name == 'Component'">Via 10-Pin Mini Din</span>
+                            <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" /><span ng-class="{'disabled': tech.disabled}">{{tech.name | convert:connectionLegend}}</span> <span ng-if="optionSel.compatible['3'] && tech.name == '2'">Via 10-Pin Mini Din</span>
                         </label>
                     </li>
                 </ul>
@@ -65,23 +65,25 @@
                 <div class="grid">
                     <div class="grid__item modal" ng-repeat="item in items | filter:{ detail: true }">
                         <div class="grid">
-                            <div class="grid__item one-whole">
+                            <div class="grid__item one-whole flush-right">
                                 <button ng-click="item.detail = false">close</button>
                             </div>
                             <div class="grid__item palm--one-whole one-half">
                                 <div class="diagram">
                                     <div class="grid--full">
-                                        <div class="grid__item four-fifths devices">
+                                        <div class="grid__item three-fifths devices">
                                             <div class="tv">
                                                 <img ng-src="img/tvpanel.png" data-large="img/tvpanel.png" magnify="zoomrange: [4,5], magnifiersize :  [150, 150]" />
                                             </div>
                                             <div class="rec">
-                                                <span ng-if="!optionSel.model">DIRECTV</span><br />
-                                                <img ng-if="optionSel.model" ng-src="http://agentanswercenterstg.directv.com/en-us/res/system/img/{{optionSel.model}}_back.jpg" data-large="http://agentanswercenterstg.directv.com/en-us/res/system/img/{{optionSel.model}}_back.jpg" magnify="zoomrange: [4,5], magnifiersize :  [150, 150]"  />
+                                                <span ng-if="!optionSel.model">DIRECTV</span>
+                                                <span class="helper"></span><img ng-if="optionSel.model" ng-src="img/{{optionSel.model | lowercase}}.jpg" data-large="img/{{optionSel.model | lowercase}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
                                             </div>
-                                            <div ng-repeat="device in item.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
+                                            <div ng-repeat="device in item.device | orderBy" class="{{device | convert:deviceLegend | lowercase | spcToHyphen}}">
+                                                <span class="helper"></span><img ng-src="img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg" data-large="img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
+                                            </div>
                                         </div><!-- 
-                                     --><div class="grid__item one-fifth setup">
+                                     --><div class="grid__item two-fifths setup">
                                             <div class="step-{{step + 1}}" ng-repeat="(step, setup) in item.setup track by $index" ng-class="{
                                             'level-{{setup[0]}}': {{setup[0]}} < {{setup[1]}},
                                             'level-{{setup[1]}}': {{setup[1]}} < {{setup[0]}},
@@ -106,9 +108,13 @@
                             <div class="grid__item palm--one-whole one-half">
                                 <div ng-repeat="(no, step) in item.instructions track by $index" class="instructions step-{{no + 1}}">
                                     <div class="conBorder">
-                                        <img ng-src="http://agentanswercenterstg.directv.com/en-us/res/images/conn_{{item.connection[no]}}.jpg" data-large="http://agentanswercenterstg.directv.com/en-us/res/images/conn_{{item.connection[no]}}.jpg" magnify />
+                                        <img ng-src="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" data-large="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" magnify="zoomrange: [4,5], magnifiersize :  [150, 150]" />
                                     </div>
-                                    <b>{{no + 1}}.</b> <span compile="step"></span>
+                                    <b>{{no + 1}}.</b> <span compile="step | convert:instructionLegend"></span>
+                                </div>
+                                <div ng-repeat="(no, note) in item.notes track by $index" class="instructions">
+                                    <div class="conBorder"></div>
+                                    <span compile="note | convert:notesLegend"></span>
                                 </div>
                             </div>
                         </div>
@@ -116,17 +122,17 @@
                 </div>
                 <div class="grid">
                     <div class="grid__item">
-                        <h2 ng-if="!items.length">There are no diagrams available for the options selected</h2>
+                        <h3 ng-if="!items.length">The device and/or cable connection combination is not currently supported in the Cable Diagram Tool. Please refer to your device(s)' users manual for connection options.</h3>
                     </div>
-                    <div class="grid__item palm--one-whole lap--one-half portable--one-third desk--one-quarter" ng-repeat="portfolioItem in items = (portfolioArray | matchDevices:deviceArray | removeDisabled:connectionArray | matchConnections:connectionArray)" ng-click="portfolioItem.detail = true">
-                        <div class="diagram preview">
+                    <div class="grid__item palm--one-whole lap--one-half portable--one-third desk--one-quarter" ng-repeat="portfolioItem in items = (portfolioArray | matchDevices:deviceArray | removeDisabled:connectionArray | matchConnections:connectionArray | orderBy: 'connection')">
+                        <div class="diagram preview" ng-click="portfolioItem.detail = true">
                             <div class="grid--full">
                                 <div class="grid__item four-fifths devices">
                                     <div class="tv">TV</div>
                                     <div class="rec">
                                         <span ng-bind="optionSel.model | ternary:'DIRECTV'"></span>
                                     </div>
-                                    <div ng-repeat="device in portfolioItem.device" ng-bind="device" class="{{device | lowercase | spcToHyphen}}"></div>
+                                    <div ng-repeat="device in portfolioItem.device" ng-bind="device | convert:deviceLegend" class="{{device | convert:deviceLegend | lowercase | spcToHyphen}}"></div>
                                 </div><!--
                              --><div class="grid__item one-fifth setup">
                                     <div class="step-{{step + 1}}" ng-repeat="(step, setup) in portfolioItem.setup track by $index" ng-class="{
@@ -148,7 +154,7 @@
                                     </div>
                                 </div><!--
                              --><div class="grid__item one-whole">
-                                    <span class="step-{{$index + 1}}" ng-repeat="connection in portfolioItem.connection track by $index">{{connection}}<span ng-if="!$last">, </span></span>
+                                    <span class="step-{{$index + 1}}" ng-repeat="connection in portfolioItem.connection track by $index">{{connection | convert:connectionLegend}}<span ng-if="!$last"> + </span></span>
                                 </div>
                             </div>
                         </div>
