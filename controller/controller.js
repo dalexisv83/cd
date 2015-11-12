@@ -5,4 +5,6 @@ angular.module('cablingDiagram').controller('cablingDiagramController', ['$scope
     $scope.deviceArray = getDevices($scope.portfolioArray);
     $scope.deviceLegend = deviceLgnd;
     $scope.connectionLegend = connectionLgnd;
+    $scope.instructionLegend = instructionLgnd;
+    $scope.notesLegend = notesLgnd;
 }]);
