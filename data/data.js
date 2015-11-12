@@ -16,170 +16,191 @@ connectionLgnd = {
 	8: "Digital Coax Audio",
 }
 
+instructionLgnd = {
+    1: "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no] | convert:connectionLegend}} cable.",
+    2: "Connect {{item.device[0] | convert:deviceLegend}} to TV with {{item.connection[no] | convert:connectionLegend}} cable.",
+    3: "Connect TV to {{item.device[0] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable.",
+    4: "Connect {{optionSel.model | ternary:'DIRECTV'}} to {{item.device[0] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable.",
+    5: "Connect {{optionSel.model | ternary:'DIRECTV'}} to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable.",
+    6: "Connect {{item.device[0] | convert:deviceLegend}} to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable.",
+    7: "Connect {{item.device[1] | convert:deviceLegend}} to TV with {{item.connection[no] | convert:connectionLegend}} cable.",
+    8: "Connect TV to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable.",
+}
+
+notesLgnd = {
+    1: "Cycle video source on TV to appropriate input.",
+    2: "Note: VCR may need to be on for satellite signal to be view on TV. {{optionSel.model | ternary:'DIRECTV'}} and VCR will share same input.",
+    3: "Cycle audio source on TKTKTKTK"
+}
+
 data = [{
     "detail": false,
     "connection": [6],
     "device": [],
     "setup": [[2,1]],
-    "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
-    ]
+    "instructions": [1]
 }, {
     "detail": false,
     "connection": [4],
     "device": [],
     "setup": [[2,1]],
-    "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
-    ]
+    "instructions": [1]
 }, {
     "detail": false,
-    "connection": [5, 4],
+    "connection": [5,4],
     "device": [],
     "setup": [[2,1], [2,1]],
-    "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable.",
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
-    ]
+    "instructions": [1,1]
 }, {
     "detail": false,
     "connection": [2],
     "device": [],
     "setup": [[2,1]],
-    "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
-    ]
+    "instructions": [1]
 }, {
     "detail": false,
-    "connection": [2, 8],
+    "connection": [2,8],
     "device": [],
     "setup": [[2,1], [2,1]],
-    "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable.",
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
-    ]
+    "instructions": [1,1]
 }, {
     "detail": false,
-    "connection": [2, 7],
+    "connection": [2,7],
     "device": [],
     "setup": [[2,1], [2,1]],
-    "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable.",
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
-    ]
+    "instructions": [1,1]
 }, {
     "detail": false,
     "connection": [1],
     "device": [],
     "setup": [[2,1]],
-    "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no]}} cable."
-    ]
-}, {
+    "instructions": [1]
+}, { // Start VCR
     "detail": false,
-    "connection": [4, 4],
+    "connection": [4,4],
     "device": [3],
     "setup": [[2,3], [3,1]],
-    "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
-        "Connect {{item.device[0]}} to TV with {{item.connection[no]}} cable.",
-        "Cycle input on TV to appropriate AV input.",
-        "Note: VCR may need to be on for satellite signal to be view on TV. Satellite receiver and VCR will share same AV input."
-    ]
+    "instructions": [4,2],
+    "notes": [1,2]
 }, {
     "detail": false,
-    "connection": [4, 5, 4, 5],
+    "connection": [4,5,4,5],
     "device": [3],
     "setup": [[2,3], [2,3], [3,1], [3,1]],
-    "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
-        "Connect {{item.device[0]}} to TV with {{item.connection[no]}} cable.",
-        "Connect {{item.device[0]}} to TV with {{item.connection[no]}} cable.",
-        "Cycle input on TV to appropriate AV input.",
-        "Note: VCR may need to be on for satellite signal to be view on TV. Satellite receiver and VCR will share same AV input."
-    ]
+    "instructions": [4,4,2,2],
+    "notes": [1,2]
 }, {
     "detail": false,
-    "connection": [6, 6],
+    "connection": [6,6],
     "device": [3],
     "setup": [[2,3], [3,1]],
-    "instructions": [
-        "Connect {{optionSel.model | ternary:'DIRECTV'}} to VCR with {{item.connection[no]}} cable.",
-        "Connect {{item.device[0]}} to TV with {{item.connection[no]}} cable.",
-        "Cycle input on TV to appropriate AV input.",
-        "Note: VCR may need to be on for satellite signal to be view on TV. Satellite receiver and VCR will share same AV input."
-    ]
-}, {
+    "instructions": [4,2],
+    "notes": [1,2]
+}, { // Start Blu-ray/DVD
     "detail": false,
-    "connection": [1],
+    "connection": [1,1],
     "device": [4],
     "setup": [[2,1], [3,1]],
+    "instructions": [1,2],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [8, 2, 8, 2],
+    "connection": [2,8,2,8],
     "device": [4],
     "setup": [[2,1], [2,1], [3,1], [3,1]],
+    "instructions": [1,1,2,2],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [7, 2, 7, 2],
+    "connection": [2,7,2,7],
     "device": [4],
     "setup": [[2,1], [2,1], [3,1], [3,1]],
+    "instructions": [1,1,2,2],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [4],
+    "connection": [4,4],
     "device": [4],
     "setup": [[2,1], [3,1]],
+    "instructions": [1,2],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [4, 5, 4, 5],
+    "connection": [4,5,4,5],
     "device": [4],
     "setup": [[2,1], [2,1], [3,1], [3,1]],
-}, {
+    "instructions": [1,1,2,2],
+    "notes": [1]
+}, { // Start Sound Bar
     "detail": false,
-    "connection": [1],
+    "connection": [1,1],
     "device": [5],
     "setup": [[2,3], [3,1]],
+    "instructions": [4,2],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [8, 2],
+    "connection": [2,7],
     "device": [5],
-    "setup": [[2,3], [2,1]],
+    "setup": [[2,1], [2,3]],
+    "instructions": [1,4],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [7, 2],
+    "connection": [2,8],
     "device": [5],
-    "setup": [[2,3], [2,1]],
+    "setup": [[2,1], [2,3]],
+    "instructions": [1,4],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [4, 4],
+    "connection": [4,4],
     "device": [5],
-    "setup": [[2,3], [2,1]],
-}, {
+    "setup": [[2,1], [2,3]],
+    "instructions": [1,4],
+    "notes": [1]
+}, { // Start Audio Receiver
     "detail": false,
-    "connection": [1],
+    "connection": [1,1],
     "device": [6],
     "setup": [[2,3], [3,1]],
+    "instructions": [4,2],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [8, 2],
+    "connection": [2,7],
     "device": [6],
-    "setup": [[2,3], [3,1]],
+    "setup": [[2,1], [2,3]],
+    "instructions": [1,4],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [7, 2],
+    "connection": [2,8],
     "device": [6],
-    "setup": [[2,3], [3,1]],
+    "setup": [[2,1], [2,3]],
+    "instructions": [1,4],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [4, 4],
+    "connection": [4,4],
     "device": [6],
-    "setup": [[2,3], [3,1]],
+    "setup": [[2,1], [2,3]],
+    "instructions": [1,4],
+    "notes": [1]
+}, { // Start Blu-ray/DVD + Audio Receiver
+    "detail": false,
+    "connection": [1,1,1],
+    "device": [4,6],
+    "setup": [[2,4], [3,4], [4,1]],
+    "instructions": [5,6,7],
+    "notes": [1]
 }, {
     "detail": false,
-    "connection": [1, 1, 1],
-    "device": [4, 6],
-    "setup": [[4,1], [2,4], [3,4]]
+    "connection": [2,7,2,7,7],
+    "device": [4,6],
+    "setup": [[2,1], [2,4], [3,1], [3,4], [1,4]],
+    "instructions": [1,5,2,6,8],
+    "notes": [1]
 }]
 
 receiverData = [{
