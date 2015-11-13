@@ -74,13 +74,16 @@
                                         <div class="grid__item three-fifths devices">
                                             <div class="tv">
                                                 <img ng-src="img/tvpanel.png" data-large="img/tvpanel.png" magnify="zoomrange: [4,5], magnifiersize :  [150, 150]" />
+                                                <h4 class="devLabel">TV</h4>
                                             </div>
-                                            <div class="rec">
-                                                <span ng-if="!optionSel.model">DIRECTV</span>
+                                            <div class="rec" ng-class="{'recSelected': optionSel.model}">
+                                                <span ng-if="!optionSel.model">Select receiver model</span>
                                                 <span class="helper"></span><img ng-if="optionSel.model" ng-src="img/{{optionSel.model | lowercase}}.jpg" data-large="img/{{optionSel.model | lowercase}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
+                                                <h4 class="devLabel" ng-bind="optionSel.model | ternary:'DIRECTV'"></h4>
                                             </div>
                                             <div ng-repeat="device in item.device | orderBy" class="{{device | convert:deviceLegend | lowercase | spcToHyphen}}">
                                                 <span class="helper"></span><img ng-src="img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg" data-large="img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
+                                                <h4 class="devLabel" ng-bind="device | convert:deviceLegend"></h4>
                                             </div>
                                         </div><!-- 
                                      --><div class="grid__item two-fifths setup">
