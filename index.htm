@@ -111,7 +111,8 @@
                             <div class="grid__item palm--one-whole one-half">
                                 <div ng-repeat="(no, step) in item.instructions track by $index" class="instructions step-{{no + 1}}">
                                     <div class="conBorder">
-                                        <img ng-src="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" data-large="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" magnify="zoomrange: [4,5], magnifiersize :  [150, 150]" />
+                                        <img ng-src="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" data-large="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" magnify="zoomrange: [4,5], magnifiersize :  [150, 150]" /><!--
+                                        --><img ng-src="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}-port.jpg" data-large="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}-port.jpg" magnify="zoomrange: [4], magnifiersize :  [150, 150]" />
                                     </div>
                                     <b>{{no + 1}}.</b> <span compile="step | convert:instructionLegend"></span>
                                 </div>

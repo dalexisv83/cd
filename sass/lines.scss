@@ -13,6 +13,7 @@ $plusTop: 5px;
 	}
 }
 
+$origTop: 0px;
 $plusTop: 5px * 3;
 .modal {
 	@for $i from 1 through 8 {

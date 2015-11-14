@@ -38,270 +38,270 @@
   top: 73px;
 }
 
-/* line 20, ../sass/lines.scss */
+/* line 21, ../sass/lines.scss */
 .modal .step-1 .vert, .modal .step-1 .horz {
-  top: 38px;
+  top: 0px;
 }
-/* line 24, ../sass/lines.scss */
+/* line 25, ../sass/lines.scss */
 .modal .step-2 .vert, .modal .step-2 .horz {
-  top: 53px;
+  top: 15px;
 }
-/* line 24, ../sass/lines.scss */
+/* line 25, ../sass/lines.scss */
 .modal .step-3 .vert, .modal .step-3 .horz {
-  top: 68px;
+  top: 30px;
 }
-/* line 24, ../sass/lines.scss */
+/* line 25, ../sass/lines.scss */
 .modal .step-4 .vert, .modal .step-4 .horz {
-  top: 83px;
+  top: 45px;
 }
-/* line 24, ../sass/lines.scss */
+/* line 25, ../sass/lines.scss */
 .modal .step-5 .vert, .modal .step-5 .horz {
-  top: 98px;
+  top: 60px;
 }
-/* line 24, ../sass/lines.scss */
+/* line 25, ../sass/lines.scss */
 .modal .step-6 .vert, .modal .step-6 .horz {
-  top: 113px;
+  top: 75px;
 }
-/* line 24, ../sass/lines.scss */
+/* line 25, ../sass/lines.scss */
 .modal .step-7 .vert, .modal .step-7 .horz {
-  top: 128px;
+  top: 90px;
 }
-/* line 24, ../sass/lines.scss */
+/* line 25, ../sass/lines.scss */
 .modal .step-8 .vert, .modal .step-8 .horz {
-  top: 143px;
+  top: 105px;
 }
 
-/* line 38, ../sass/lines.scss */
+/* line 39, ../sass/lines.scss */
 .step-1 .arrow {
   top: 63px;
   left: 4px;
 }
 
-/* line 43, ../sass/lines.scss */
+/* line 44, ../sass/lines.scss */
 .step-2 .arrow {
   top: 68px;
   left: 12px;
 }
 
-/* line 43, ../sass/lines.scss */
+/* line 44, ../sass/lines.scss */
 .step-3 .arrow {
   top: 73px;
   left: 20px;
 }
 
-/* line 43, ../sass/lines.scss */
+/* line 44, ../sass/lines.scss */
 .step-4 .arrow {
   top: 78px;
   left: 28px;
 }
 
-/* line 43, ../sass/lines.scss */
+/* line 44, ../sass/lines.scss */
 .step-5 .arrow {
   top: 83px;
   left: 36px;
 }
 
-/* line 43, ../sass/lines.scss */
+/* line 44, ../sass/lines.scss */
 .step-6 .arrow {
   top: 88px;
   left: 44px;
 }
 
-/* line 43, ../sass/lines.scss */
+/* line 44, ../sass/lines.scss */
 .step-7 .arrow {
   top: 93px;
   left: 52px;
 }
 
-/* line 43, ../sass/lines.scss */
+/* line 44, ../sass/lines.scss */
 .step-8 .arrow {
   top: 98px;
   left: 60px;
 }
 
-/* line 58, ../sass/lines.scss */
+/* line 59, ../sass/lines.scss */
 .modal .step-1 .arrow {
   top: 75px;
   left: 12px;
 }
-/* line 63, ../sass/lines.scss */
+/* line 64, ../sass/lines.scss */
 .modal .step-2 .arrow {
   top: 90px;
   left: 36px;
 }
-/* line 63, ../sass/lines.scss */
+/* line 64, ../sass/lines.scss */
 .modal .step-3 .arrow {
   top: 105px;
   left: 60px;
 }
-/* line 63, ../sass/lines.scss */
+/* line 64, ../sass/lines.scss */
 .modal .step-4 .arrow {
   top: 120px;
   left: 84px;
 }
-/* line 63, ../sass/lines.scss */
+/* line 64, ../sass/lines.scss */
 .modal .step-5 .arrow {
   top: 135px;
   left: 108px;
 }
-/* line 63, ../sass/lines.scss */
+/* line 64, ../sass/lines.scss */
 .modal .step-6 .arrow {
   top: 150px;
   left: 132px;
 }
-/* line 63, ../sass/lines.scss */
+/* line 64, ../sass/lines.scss */
 .modal .step-7 .arrow {
   top: 165px;
   left: 156px;
 }
-/* line 63, ../sass/lines.scss */
+/* line 64, ../sass/lines.scss */
 .modal .step-8 .arrow {
   top: 180px;
   left: 180px;
 }
 
-/* line 76, ../sass/lines.scss */
+/* line 77, ../sass/lines.scss */
 .height-1 .vert {
   height: 50px;
 }
 
-/* line 80, ../sass/lines.scss */
+/* line 81, ../sass/lines.scss */
 .height-2 .vert {
   height: 93px;
 }
 
-/* line 80, ../sass/lines.scss */
+/* line 81, ../sass/lines.scss */
 .height-3 .vert {
   height: 136px;
 }
 
-/* line 80, ../sass/lines.scss */
+/* line 81, ../sass/lines.scss */
 .height-4 .vert {
   height: 179px;
 }
 
-/* line 80, ../sass/lines.scss */
+/* line 81, ../sass/lines.scss */
 .height-5 .vert {
   height: 222px;
 }
 
-/* line 80, ../sass/lines.scss */
+/* line 81, ../sass/lines.scss */
 .height-6 .vert {
   height: 265px;
 }
 
-/* line 80, ../sass/lines.scss */
+/* line 81, ../sass/lines.scss */
 .height-7 .vert {
   height: 308px;
 }
 
-/* line 80, ../sass/lines.scss */
+/* line 81, ../sass/lines.scss */
 .height-8 .vert {
   height: 351px;
 }
 
-/* line 92, ../sass/lines.scss */
+/* line 93, ../sass/lines.scss */
 .modal .height-1 .vert {
   height: 150px;
 }
-/* line 96, ../sass/lines.scss */
+/* line 97, ../sass/lines.scss */
 .modal .height-2 .vert {
   height: 279px;
 }
-/* line 96, ../sass/lines.scss */
+/* line 97, ../sass/lines.scss */
 .modal .height-3 .vert {
   height: 408px;
 }
-/* line 96, ../sass/lines.scss */
+/* line 97, ../sass/lines.scss */
 .modal .height-4 .vert {
   height: 537px;
 }
-/* line 96, ../sass/lines.scss */
+/* line 97, ../sass/lines.scss */
 .modal .height-5 .vert {
   height: 666px;
 }
-/* line 96, ../sass/lines.scss */
+/* line 97, ../sass/lines.scss */
 .modal .height-6 .vert {
   height: 795px;
 }
-/* line 96, ../sass/lines.scss */
+/* line 97, ../sass/lines.scss */
 .modal .height-7 .vert {
   height: 924px;
 }
-/* line 96, ../sass/lines.scss */
+/* line 97, ../sass/lines.scss */
 .modal .height-8 .vert {
   height: 1053px;
 }
 
-/* line 108, ../sass/lines.scss */
+/* line 109, ../sass/lines.scss */
 .level-1 .vert, .level-1 .arrow {
   margin-top: 0px;
 }
 
-/* line 112, ../sass/lines.scss */
+/* line 113, ../sass/lines.scss */
 .level-2 .vert, .level-2 .arrow {
   margin-top: 43px;
 }
 
-/* line 112, ../sass/lines.scss */
+/* line 113, ../sass/lines.scss */
 .level-3 .vert, .level-3 .arrow {
   margin-top: 86px;
 }
 
-/* line 112, ../sass/lines.scss */
+/* line 113, ../sass/lines.scss */
 .level-4 .vert, .level-4 .arrow {
   margin-top: 129px;
 }
 
-/* line 112, ../sass/lines.scss */
+/* line 113, ../sass/lines.scss */
 .level-5 .vert, .level-5 .arrow {
   margin-top: 172px;
 }
 
-/* line 112, ../sass/lines.scss */
+/* line 113, ../sass/lines.scss */
 .level-6 .vert, .level-6 .arrow {
   margin-top: 215px;
 }
 
-/* line 112, ../sass/lines.scss */
+/* line 113, ../sass/lines.scss */
 .level-7 .vert, .level-7 .arrow {
   margin-top: 258px;
 }
 
-/* line 112, ../sass/lines.scss */
+/* line 113, ../sass/lines.scss */
 .level-8 .vert, .level-8 .arrow {
   margin-top: 301px;
 }
 
-/* line 124, ../sass/lines.scss */
+/* line 125, ../sass/lines.scss */
 .modal .level-1 .vert, .modal .level-1 .arrow {
   margin-top: 0px;
 }
-/* line 128, ../sass/lines.scss */
+/* line 129, ../sass/lines.scss */
 .modal .level-2 .vert, .modal .level-2 .arrow {
   margin-top: 129px;
 }
-/* line 128, ../sass/lines.scss */
+/* line 129, ../sass/lines.scss */
 .modal .level-3 .vert, .modal .level-3 .arrow {
   margin-top: 258px;
 }
-/* line 128, ../sass/lines.scss */
+/* line 129, ../sass/lines.scss */
 .modal .level-4 .vert, .modal .level-4 .arrow {
   margin-top: 387px;
 }
-/* line 128, ../sass/lines.scss */
+/* line 129, ../sass/lines.scss */
 .modal .level-5 .vert, .modal .level-5 .arrow {
   margin-top: 516px;
 }
-/* line 128, ../sass/lines.scss */
+/* line 129, ../sass/lines.scss */
 .modal .level-6 .vert, .modal .level-6 .arrow {
   margin-top: 645px;
 }
-/* line 128, ../sass/lines.scss */
+/* line 129, ../sass/lines.scss */
 .modal .level-7 .vert, .modal .level-7 .arrow {
   margin-top: 774px;
 }
-/* line 128, ../sass/lines.scss */
+/* line 129, ../sass/lines.scss */
 .modal .level-8 .vert, .modal .level-8 .arrow {
   margin-top: 903px;
 }
