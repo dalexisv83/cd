@@ -131,11 +131,15 @@
                         <div class="diagram preview" ng-click="portfolioItem.detail = true">
                             <div class="grid--full">
                                 <div class="grid__item four-fifths devices">
-                                    <div class="tv">TV</div>
+                                    <div class="tv">
+                                        <span>TV</span>
+                                    </div>
                                     <div class="rec">
                                         <span ng-bind="optionSel.model | ternary:'DIRECTV'"></span>
                                     </div>
-                                    <div ng-repeat="device in portfolioItem.device" ng-bind="device | convert:deviceLegend" class="{{device | convert:deviceLegend | lowercase | spcToHyphen}}"></div>
+                                    <div ng-repeat="device in portfolioItem.device" class="{{device | convert:deviceLegend | lowercase | spcToHyphen}}">
+                                        <span ng-bind="device | convert:deviceLegend"></span>
+                                    </div>
                                 </div><!--
                              --><div class="grid__item one-fifth setup">
                                     <div class="step-{{step + 1}}" ng-repeat="(step, setup) in portfolioItem.setup track by $index" ng-class="{

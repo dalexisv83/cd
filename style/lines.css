@@ -1,121 +1,121 @@
 /* line 6, ../sass/lines.scss */
 .step-1 .vert, .step-1 .horz {
-  top: 0px;
+  top: 38px;
 }
 
 /* line 10, ../sass/lines.scss */
 .step-2 .vert, .step-2 .horz {
-  top: 5px;
+  top: 43px;
 }
 
 /* line 10, ../sass/lines.scss */
 .step-3 .vert, .step-3 .horz {
-  top: 10px;
+  top: 48px;
 }
 
 /* line 10, ../sass/lines.scss */
 .step-4 .vert, .step-4 .horz {
-  top: 15px;
+  top: 53px;
 }
 
 /* line 10, ../sass/lines.scss */
 .step-5 .vert, .step-5 .horz {
-  top: 20px;
+  top: 58px;
 }
 
 /* line 10, ../sass/lines.scss */
 .step-6 .vert, .step-6 .horz {
-  top: 25px;
+  top: 63px;
 }
 
 /* line 10, ../sass/lines.scss */
 .step-7 .vert, .step-7 .horz {
-  top: 30px;
+  top: 68px;
 }
 
 /* line 10, ../sass/lines.scss */
 .step-8 .vert, .step-8 .horz {
-  top: 35px;
+  top: 73px;
 }
 
 /* line 20, ../sass/lines.scss */
 .modal .step-1 .vert, .modal .step-1 .horz {
-  top: 0px;
+  top: 38px;
 }
 /* line 24, ../sass/lines.scss */
 .modal .step-2 .vert, .modal .step-2 .horz {
-  top: 15px;
+  top: 53px;
 }
 /* line 24, ../sass/lines.scss */
 .modal .step-3 .vert, .modal .step-3 .horz {
-  top: 30px;
+  top: 68px;
 }
 /* line 24, ../sass/lines.scss */
 .modal .step-4 .vert, .modal .step-4 .horz {
-  top: 45px;
+  top: 83px;
 }
 /* line 24, ../sass/lines.scss */
 .modal .step-5 .vert, .modal .step-5 .horz {
-  top: 60px;
+  top: 98px;
 }
 /* line 24, ../sass/lines.scss */
 .modal .step-6 .vert, .modal .step-6 .horz {
-  top: 75px;
+  top: 113px;
 }
 /* line 24, ../sass/lines.scss */
 .modal .step-7 .vert, .modal .step-7 .horz {
-  top: 90px;
+  top: 128px;
 }
 /* line 24, ../sass/lines.scss */
 .modal .step-8 .vert, .modal .step-8 .horz {
-  top: 105px;
+  top: 143px;
 }
 
 /* line 38, ../sass/lines.scss */
 .step-1 .arrow {
-  top: 25px;
+  top: 63px;
   left: 4px;
 }
 
 /* line 43, ../sass/lines.scss */
 .step-2 .arrow {
-  top: 30px;
+  top: 68px;
   left: 12px;
 }
 
 /* line 43, ../sass/lines.scss */
 .step-3 .arrow {
-  top: 35px;
+  top: 73px;
   left: 20px;
 }
 
 /* line 43, ../sass/lines.scss */
 .step-4 .arrow {
-  top: 40px;
+  top: 78px;
   left: 28px;
 }
 
 /* line 43, ../sass/lines.scss */
 .step-5 .arrow {
-  top: 45px;
+  top: 83px;
   left: 36px;
 }
 
 /* line 43, ../sass/lines.scss */
 .step-6 .arrow {
-  top: 50px;
+  top: 88px;
   left: 44px;
 }
 
 /* line 43, ../sass/lines.scss */
 .step-7 .arrow {
-  top: 55px;
+  top: 93px;
   left: 52px;
 }
 
 /* line 43, ../sass/lines.scss */
 .step-8 .arrow {
-  top: 60px;
+  top: 98px;
   left: 60px;
 }
 

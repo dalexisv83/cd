@@ -174,14 +174,12 @@ select {
 }
 
 .devices div {
-	padding: 10px;
 	text-align: center;
 	color: white;
 	height: 38px;
-}
-
-.preview .devices div {
-	background: #454545;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border: 1px dotted #ccc;
 }
 
 .modal {
@@ -204,6 +202,7 @@ select {
 }
 
 .modal .devices div {
+	background-image: none;
 	padding: 0;
 	height: 100px;
 	border: 4px solid #d3d3d3;
@@ -221,12 +220,25 @@ select {
 	vertical-align: middle;
 }
 
+.devices span {
+	display: inline-block;
+}
+
+.devices .tv {
+	height: 76px;
+    background-image: url('../img/tv-icon.png');
+}
+
 .rec {
-    background: #838383;
+    background-image: url('../img/rec-icon.png');
 }
 
 .rec h4 {
 	margin-top: -4px;
+}
+
+.modal .rec {
+	background-color: #838383;
 }
 
 .rec.recSelected {
@@ -240,6 +252,18 @@ select {
 .modal .rec span {
 	display: inline-block;
 	margin-top: 40px
+}
+
+.vcr {
+    background-image: url('../img/vcr-icon.png');
+}
+
+.blu-ray-dvd {
+    background-image: url('../img/blu-ray-dvd-icon.png');
+}
+
+.audio-receiver {
+    background-image: url('../img/audio-receiver-icon.png');
 }
 
 .modal .devices div .helper {
