@@ -27,6 +27,8 @@ select {
 	background: url(http://agentanswercenter.directv.com/en-us/res/system/img/tool_bg-09212015.jpg) top left black;
 	color: white;
 	padding: 20px 15px;
+	z-index: 1;
+	position: relative;
 }
 
 .header h1 {
