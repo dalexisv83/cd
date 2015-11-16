@@ -31,7 +31,8 @@ notesLgnd = {
     1: "Cycle video source on TV to appropriate input.",
     2: "Note: VCR may need to be on for satellite signal to be view on TV. {{optionSel.model | ternary:'DIRECTV'}} and VCR will share same input.",
     3: "Cycle audio source on {{item.device[0] | convert:deviceLegend}} to appropriate input",
-    4: "Cycle audio source on {{item.device[1] | convert:deviceLegend}} to appropriate input"
+    4: "Cycle audio source on {{item.device[1] | convert:deviceLegend}} to appropriate input",
+    5: "Note: Use *ARC HDMI if possible. Both TV and Audio Receiver must be labeled \"ARC\" to work. TV will stay on HDMI ARC input, customer will cycle inputs on Audio Receiver to access all their device(s)"
 }
 
 data = [{
@@ -166,7 +167,7 @@ data = [{
     "device": [6],
     "setup": [[2,3], [3,1]],
     "instructions": [4,2],
-    "notes": [1,3]
+    "notes": [1,3,5]
 }, {
     "detail": false,
     "connection": [2,7],
@@ -194,7 +195,7 @@ data = [{
     "device": [4,6],
     "setup": [[2,4], [3,4], [4,1]],
     "instructions": [5,6,7],
-    "notes": [1,4]
+    "notes": [1,4,5]
 }, {
     "detail": false,
     "connection": [2,7,2,7,7],

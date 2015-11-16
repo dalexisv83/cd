@@ -123,10 +123,11 @@
                             </div>
                         </div>
                     <div class="grid">
-                                                <div class="grid__item one-whole caveat">
-                                <h5 ng-if="item.device[0] == 4">*Although two separate devices, Blu-ray and DVD players have have similar connections. DVD players cannot play Blu-ray Discs but Blu-ray players can play standard DVD discs.</h5>
-                            </div>
-                            </div>
+                        <div class="grid__item one-whole">
+                            <h5 ng-if="item.device[0] == 4">*Although two separate devices, Blu-ray and DVD players have have similar connections. DVD players cannot play Blu-ray Discs but Blu-ray players can play standard DVD discs.</h5>
+                            <h5 ng-if="(item.connection[0] == 1) && (item.device[0] == 6) || (item.device[1] == 6)">*ARC - Audio Return Channel. For Smart TV's where the TV is creating the audio via apps like Netflix and Pandora. This allows audio to come through the Audio Receiver instead of TV speakers. ARC can be used on all devices that need audio from one common source, however, it may not always work perfectly. (i.e., won't hear 5.1 audio because TV is 2.0 audio) Also, it does not support Dolby TrueHD and DTS-HD. To hear 5.1 you would use a separate audio connection to the Audio Receiver.</h5>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <div class="grid">

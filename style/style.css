@@ -172,11 +172,10 @@ select {
 	float: left;
 	display: inline-block;
 	border: 4px solid transparent;
-	margin: 0 10px 10px 0;
+	margin: 0 10px 50px 0;
 	vertical-align: top;
 	font-size: 0;
 	width: 130px;
-	min-height: 61px;
 }
 
 .conBorder img {
@@ -325,6 +324,10 @@ button {
 	background-color: white;
 }
 
-.caveat h5 {
-	margin: 10px 0;
+h5 {
+	margin: 50px 0 0;
+}
+
+h5 + h5 {
+	margin: 10px 0 -10px;
 }
