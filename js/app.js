@@ -114,6 +114,17 @@
             }
         }
     })
+    cablingDiagram.directive("ngWindowPie", ['$timeout', function($timeout) {
+        'use strict';
+        /*jslint unparam: true*/
+        return function(scope, element, attrs) {
+            if (window.PIE) {
+                $timeout(function() {
+                    window.PIE.attach(angular.element(element)[0]);
+                });
+            }
+        };
+    }])
     cablingDiagram.directive('magnify', function() {
         return {
             restrict: 'A',

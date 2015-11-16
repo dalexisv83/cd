@@ -81,8 +81,6 @@ select {
 .preview:hover {
 	border: 2px solid #2caae2;
     box-shadow: 5px 5px 5px #cccccc;
-    filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=7, Direction=180),
-            progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=7, Direction=90)
 }
 
 .preview span {
@@ -210,8 +208,8 @@ select {
     margin-left: -47%;
     top: 24px;
     border-radius: 5px;
-    box-shadow: 2px 2px 30px gray;
-    max-height: 600px;
+    box-shadow: 5px 5px 5px #cccccc;
+    max-height: 550px;
     overflow-y: auto;
 }
 
