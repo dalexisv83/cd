@@ -290,6 +290,15 @@ h4.devLabel {
     background-image: url('../img/blu-ray-dvd-icon.png');
 }
 
+.devices .sound-bar {
+    background-image: url('../img/sound-bar-icon.png');
+    color: #838383;
+}
+
+.devices .sound-bar span {
+	margin-left: -10px;
+}
+
 .audio-receiver {
     background-image: url('../img/audio-receiver-icon.png');
 }
