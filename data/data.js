@@ -30,7 +30,8 @@ instructionLgnd = {
 notesLgnd = {
     1: "Cycle video source on TV to appropriate input.",
     2: "Note: VCR may need to be on for satellite signal to be view on TV. {{optionSel.model | ternary:'DIRECTV'}} and VCR will share same input.",
-    3: "Cycle audio source on TKTKTKTK"
+    3: "Cycle audio source on {{item.device[0] | convert:deviceLegend}} to appropriate input",
+    4: "Cycle audio source on {{item.device[1] | convert:deviceLegend}} to appropriate input"
 }
 
 data = [{
@@ -137,70 +138,98 @@ data = [{
     "device": [5],
     "setup": [[2,3], [3,1]],
     "instructions": [4,2],
-    "notes": [1]
+    "notes": [1,3]
 }, {
     "detail": false,
     "connection": [2,7],
     "device": [5],
     "setup": [[2,1], [2,3]],
     "instructions": [1,4],
-    "notes": [1]
+    "notes": [1,3]
 }, {
     "detail": false,
     "connection": [2,8],
     "device": [5],
     "setup": [[2,1], [2,3]],
     "instructions": [1,4],
-    "notes": [1]
+    "notes": [1,3]
 }, {
     "detail": false,
     "connection": [4,4],
     "device": [5],
     "setup": [[2,1], [2,3]],
     "instructions": [1,4],
-    "notes": [1]
+    "notes": [1,3]
 }, { // Start Audio Receiver
     "detail": false,
     "connection": [1,1],
     "device": [6],
     "setup": [[2,3], [3,1]],
     "instructions": [4,2],
-    "notes": [1]
+    "notes": [1,3]
 }, {
     "detail": false,
     "connection": [2,7],
     "device": [6],
     "setup": [[2,1], [2,3]],
     "instructions": [1,4],
-    "notes": [1]
+    "notes": [1,3]
 }, {
     "detail": false,
     "connection": [2,8],
     "device": [6],
     "setup": [[2,1], [2,3]],
     "instructions": [1,4],
-    "notes": [1]
+    "notes": [1,3]
 }, {
     "detail": false,
     "connection": [4,4],
     "device": [6],
     "setup": [[2,1], [2,3]],
     "instructions": [1,4],
-    "notes": [1]
+    "notes": [1,3]
 }, { // Start Blu-ray/DVD + Audio Receiver
     "detail": false,
     "connection": [1,1,1],
     "device": [4,6],
     "setup": [[2,4], [3,4], [4,1]],
     "instructions": [5,6,7],
-    "notes": [1]
+    "notes": [1,4]
 }, {
     "detail": false,
     "connection": [2,7,2,7,7],
     "device": [4,6],
     "setup": [[2,1], [2,4], [3,1], [3,4], [1,4]],
     "instructions": [1,5,2,6,8],
-    "notes": [1]
+    "notes": [1,4]
+}, {
+    "detail": false,
+    "connection": [2,8,2,8,8],
+    "device": [4,6],
+    "setup": [[2,1], [2,4], [3,1], [3,4], [1,4]],
+    "instructions": [1,5,2,6,8],
+    "notes": [1,4]
+}, { // Start Blu-ray/DVD + Sound Bar
+    "detail": false,
+    "connection": [1,1,1],
+    "device": [4,5],
+    "setup": [[2,4], [3,4], [4,1]],
+    "instructions": [5,6,7],
+    "notes": [1,4]
+}, {
+    "detail": false,
+    "connection": [2,7,2,7,7],
+    "device": [4,5],
+    "setup": [[2,1], [2,4], [3,1], [3,4], [1,4]],
+    "instructions": [1,5,2,6,8],
+    "notes": [1,4]
+}, {
+    "detail": false,
+    "connection": [2,8,2,8,8],
+    "device": [4,5],
+    "setup": [[2,1], [2,4], [3,1], [3,4], [1,4]],
+    "instructions": [1,5,2,6,8],
+    "notes": [1,4]
 }]
 
 receiverData = [{
