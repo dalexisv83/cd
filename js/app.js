@@ -137,4 +137,17 @@
     //         }
     //     };
     // });
+    cablingDiagram.directive('zoom', function() {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs) {
+                if (jQuery.prototype.easyZoom) {
+                    // Instantiate EasyZoom plugin
+                    var $easyzoom = $(element).easyZoom();
+                    // Get the instance API
+                    var api = $easyzoom.data(element);
+                }
+            }
+        };
+    });
 })(window.angular);

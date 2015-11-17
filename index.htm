@@ -9,13 +9,14 @@
     <script type="text/javascript" src="/js/matchmedia.polyfill.js"></script>
     <![endif]-->
     <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/angular.js"></script>
-    <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/jquery.js"></script>
-    <script type="text/javascript" src="js/zoomsl-3.0.js"></script>
+    <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/jquery-aacDEV.js"></script>
+    <script type="text/javascript" src="js/easyzoom.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="controller/controller.js"></script>
     <script type="text/javascript" src="class/class.js"></script>
     <script type="text/javascript" src="data/data.js"></script>
     <link rel="stylesheet" type="text/css" href="style/csswizardry-grids/csswizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="style/easyzoom.css" />
     <link rel="stylesheet" type="text/css" href="style/style.css" />
     <link rel="stylesheet" type="text/css" href="style/lines.css" />
     <!--[if lt IE 9]>
@@ -74,16 +75,28 @@
                                     <div class="grid--full">
                                         <div class="grid__item three-fifths devices">
                                             <div class="tv">
-                                                <img ng-src="img/tv.jpg" data-large="img/tv.jpg" magnify="zoomrange: [4,5], magnifiersize :  [150, 150]" />
+                                                <div class="easyzoom easyzoom--adjacent" zoom>
+                                                    <a href="img/tv.jpg">
+                                                        <img src="img/tv.jpg" />
+                                                    </a>
+                                                </div>
                                                 <h4 class="devLabel">TV</h4>
                                             </div>
                                             <div class="rec" ng-class="{'recSelected': optionSel.model}">
                                                 <span ng-if="!optionSel.model">Select receiver model</span>
-                                                <span class="helper"></span><img ng-if="optionSel.model" ng-src="img/{{optionSel.model | lowercase}}.jpg" data-large="img/{{optionSel.model | lowercase}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
+                                                <div class="easyzoom easyzoom--adjacent" zoom>
+                                                    <a href="img/{{optionSel.model | lowercase}}.jpg">
+                                                        <img ng-if="optionSel.model" ng-src="img/{{optionSel.model | lowercase}}.jpg" data-large="img/{{optionSel.model | lowercase}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
+                                                    </a>
+                                                </div>
                                                 <h4 class="devLabel" ng-bind="optionSel.model | ternary:'DIRECTV'"></h4>
                                             </div>
                                             <div ng-repeat="device in item.device | orderBy" class="{{device | convert:deviceLegend | lowercase | spcToHyphen}}">
-                                                <span class="helper"></span><img ng-src="img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg" data-large="img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
+                                                <div class="easyzoom easyzoom--adjacent" zoom>
+                                                    <a href="img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg">
+                                                        <img ng-src="img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg"  />
+                                                    </a>
+                                                </div>
                                                 <h4 class="devLabel" ng-bind="device | convert:deviceLegend"></h4>
                                             </div>
                                         </div><!-- 
@@ -112,12 +125,23 @@
                             <div class="grid__item palm--one-whole one-half">
                                 <div ng-repeat="(no, step) in item.instructions track by $index" class="instructions step-{{no + 1}}">
                                     <div class="conBorder">
-                                        <img ng-src="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" data-large="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" magnify="zoomrange: [4,5], magnifiersize :  [150, 150]" /><!--
-                                        --><img ng-src="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}-port.jpg" data-large="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}-port.jpg" magnify="zoomrange: [4], magnifiersize :  [150, 150]" />
+                                        <div class="easyzoom easyzoom--adjacent" zoom>
+                                            <a href="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg">
+                                                <img ng-src="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="conBorder">
+                                        <div class="easyzoom easyzoom--adjacent" zoom>
+                                            <a href="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}-port.jpg">
+                                                <img ng-src="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}-port.jpg" />
+                                            </a>
+                                        </div>
                                     </div>
                                     <b>{{no + 1}}.</b> <span compile="step | convert:instructionLegend"></span>
                                 </div>
                                 <div ng-repeat="(no, note) in item.notes track by $index" class="instructions">
+                                    <div class="conBorder"></div>
                                     <div class="conBorder"></div>
                                     <span compile="note | convert:notesLegend"></span>
                                 </div>
