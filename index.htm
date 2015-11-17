@@ -84,7 +84,7 @@
                                             </div>
                                             <div class="rec" ng-class="{'recSelected': optionSel.model}">
                                                 <span ng-if="!optionSel.model">Select receiver model</span>
-                                                <div class="easyzoom easyzoom--adjacent" zoom>
+                                                <div ng-if="optionSel.model" class="easyzoom easyzoom--adjacent" zoom>
                                                     <a href="img/{{optionSel.model | lowercase}}.jpg">
                                                         <img ng-if="optionSel.model" ng-src="img/{{optionSel.model | lowercase}}.jpg" data-large="img/{{optionSel.model | lowercase}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
                                                     </a>
