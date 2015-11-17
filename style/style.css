@@ -369,3 +369,7 @@ h5 + h5 {
 	width: 200%;
 	margin-left: 40px;
 }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
