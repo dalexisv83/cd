@@ -485,16 +485,17 @@ receiverData = [{
         7: true,
         8: true
     }
-}, {
-    "model": "HG1X",
-    "compatible": {
-        1: true,
-        2: true,
-        3: false,
-        4: true,
-        5: true,
-        6: false,
-        7: true,
-        8: true
-    }
-}]
+}//, {
+//     "model": "HG1X",
+//     "compatible": {
+//         1: true,
+//         2: true,
+//         3: false,
+//         4: true,
+//         5: true,
+//         6: false,
+//         7: true,
+//         8: true
+//     }
+//}
+]
