@@ -58,7 +58,7 @@
                 <ul>
                     <li class="no-decoration" ng-repeat="tech in connectionArray | orderBy: 'name' | matchReceiverConnections:optionSel">
                         <label>
-                            <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" /><span ng-class="{'disabled': tech.disabled}">{{tech.name | convert:connectionLegend}}</span> <span ng-if="optionSel.compatible['3'] && tech.name == '2'">Via 10-Pin Mini Din</span>
+                            <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" /><span ng-class="{'disabled': tech.disabled}">{{tech.name | convert:connectionLegend}}</span><span ng-if="optionSel.compatible[3] && (tech.name == 2 || (tech.name == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span>
                         </label>
                     </li>
                 </ul>
@@ -138,12 +138,22 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <b>{{no + 1}}. </b><p compile="step | convert:instructionLegend"></p>
+                                    <b>{{no + 1}}. </b><p><span compile="step | convert:instructionLegend"></span><span ng-if="optionSel.compatible[3] && (item.connection == 2 || (item.connection == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span></p>
                                 </div>
                                 <div ng-repeat="(no, note) in item.notes track by $index" class="instructions">
                                     <div class="conBorder"></div>
                                     <div class="conBorder"></div>
-                                    <p compile="note | convert:notesLegend"></p>
+                                    <p><span compile="note | convert:notesLegend"></span></p>
+                                </div>
+                                <div class="instructions">
+                                    <div class="conBorder"></div>
+                                    <div class="conBorder"></div>
+                                    <p><span>If customer does not have available cable, choose the next best connection option and/or <a href="http://agentanswercenter.directv.com/en-us/res/equipment/lost_stolen_damaged_equipment.html?fragid=6" target="_blank">order customer the appropriate cable</a></span></p>
+                                </div>
+                                <div ng-if="(optionSel.CCK) || (!optionSel)" class="instructions">
+                                    <div class="conBorder"></div>
+                                    <div class="conBorder"></div>
+                                    <p><span>If receiver needs to be connected to the internet, refer to <a href="http://agentanswercenter.directv.com/en-us/res/rover_tools/cckw_deca/cckw_deca.htm" target="_blank">CCK-W/DECA Tool</a></span></p>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +203,7 @@
                                     </div>
                                 </div><!--
                              --><div class="grid__item one-whole">
-                                    <span class="step-{{$index + 1}}" ng-repeat="connection in portfolioItem.connection track by $index">{{connection | convert:connectionLegend}}<span ng-if="!$last"> + </span></span>
+                                    <span class="step-{{$index + 1}}" ng-repeat="connection in portfolioItem.connection track by $index">{{connection | convert:connectionLegend}}<span ng-if="optionSel.compatible[3] && (connection == 2 || (connection == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span><span ng-if="!$last"> + </span></span>
                                 </div>
                             </div>
                         </div>
