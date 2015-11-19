@@ -144,10 +144,6 @@ select {
 	clear: both;
 }
 
-.instructions + .instructions {
-	margin-top: 60px;
-}
-
 .instructions.step-1 .conBorder {
 	border-color: #3b97d3;
 }
@@ -168,11 +164,20 @@ select {
 	border-color: #24ad5f;
 }
 
+.instructions b {
+	float: left;
+	margin-right: 10px;
+}
+
+.instructions p {
+	margin-left: 150px;
+}
+
 .conBorder {
 	float: left;
 	display: inline-block;
 	border: 4px solid transparent;
-	margin: 0 10px 50px 0;
+	margin: 0 10px 30px 0;
 	vertical-align: top;
 	font-size: 0;
 	width: 60px;
