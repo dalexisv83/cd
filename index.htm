@@ -55,10 +55,11 @@
                     </li>
                 </ul>
                 <h2>Connections</h2>
-                <ul>
-                    <li class="no-decoration" ng-repeat="tech in connectionArray | orderBy: 'name' | matchReceiverConnections:optionSel">
+                <ul class="connectionList">
+                    <li ng-repeat="tech in connectionArray | orderBy: 'name' | matchReceiverConnections:optionSel">
                         <label>
                             <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" /><span ng-class="{'disabled': tech.disabled}">{{tech.name | convert:connectionLegend}}</span><span ng-if="optionSel.compatible[3] && (tech.name == 2 || (tech.name == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span>
+                            <img class="easyzoom-flyout" ng-src="img/{{tech.name | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" />
                         </label>
                     </li>
                 </ul>

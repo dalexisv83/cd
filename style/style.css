@@ -378,3 +378,19 @@ h5 + h5 {
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+.connectionList label {
+	position: relative;
+}
+
+.connectionList img {
+	display: none;
+	height: 60px;
+	width: auto;
+	right: -80px;
+	bottom: 0;
+}
+
+.connectionList li:hover img {
+	display: block;
+}
