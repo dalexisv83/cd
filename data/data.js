@@ -17,14 +17,14 @@ connectionLgnd = {
 }
 
 instructionLgnd = {
-    1: "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no] | convert:connectionLegend}} cable.",
-    2: "Connect {{item.device[0] | convert:deviceLegend}} to TV with {{item.connection[no] | convert:connectionLegend}} cable.",
-    3: "Connect TV to {{item.device[0] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable.",
-    4: "Connect {{optionSel.model | ternary:'DIRECTV'}} to {{item.device[0] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable.",
-    5: "Connect {{optionSel.model | ternary:'DIRECTV'}} to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable.",
-    6: "Connect {{item.device[0] | convert:deviceLegend}} to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable.",
-    7: "Connect {{item.device[1] | convert:deviceLegend}} to TV with {{item.connection[no] | convert:connectionLegend}} cable.",
-    8: "Connect TV to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable.",
+    1: "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no] | convert:connectionLegend}} cable",
+    2: "Connect {{item.device[0] | convert:deviceLegend}} to TV with {{item.connection[no] | convert:connectionLegend}} cable",
+    3: "Connect TV to {{item.device[0] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable",
+    4: "Connect {{optionSel.model | ternary:'DIRECTV'}} to {{item.device[0] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable",
+    5: "Connect {{optionSel.model | ternary:'DIRECTV'}} to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable",
+    6: "Connect {{item.device[0] | convert:deviceLegend}} to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable",
+    7: "Connect {{item.device[1] | convert:deviceLegend}} to TV with {{item.connection[no] | convert:connectionLegend}} cable",
+    8: "Connect TV to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable",
 }
 
 notesLgnd = {
@@ -248,6 +248,7 @@ receiverData = [{
     }
 }, {
     "model": "D12",
+    "CCK": true,
     "compatible": {
         1: false,
         2: false,
@@ -260,6 +261,7 @@ receiverData = [{
     }
 }, {
     "model": "HR34",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -272,6 +274,7 @@ receiverData = [{
     }
 }, {
     "model": "HR44",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -284,6 +287,7 @@ receiverData = [{
     }
 }, {
     "model": "HR54",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -296,11 +300,12 @@ receiverData = [{
     }
 }, {
     "model": "C31",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
         3: true,
-        4: false,
+        4: true,
         5: false,
         6: false,
         7: false,
@@ -308,11 +313,12 @@ receiverData = [{
     }
 }, {
     "model": "C41",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
         3: true,
-        4: false,
+        4: true,
         5: false,
         6: false,
         7: false,
@@ -320,11 +326,12 @@ receiverData = [{
     }
 }, {
     "model": "C51",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
         3: true,
-        4: false,
+        4: true,
         5: false,
         6: false,
         7: false,
@@ -332,6 +339,7 @@ receiverData = [{
     }
 }, {
     "model": "H20",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -344,6 +352,7 @@ receiverData = [{
     }
 }, {
     "model": "H21",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -356,6 +365,7 @@ receiverData = [{
     }
 }, {
     "model": "H23",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -368,6 +378,7 @@ receiverData = [{
     }
 }, {
     "model": "H24",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -380,6 +391,7 @@ receiverData = [{
     }
 }, {
     "model": "H25",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -392,6 +404,7 @@ receiverData = [{
     }
 }, {
     "model": "HR20",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -404,6 +417,7 @@ receiverData = [{
     }
 }, {
     "model": "HR21",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -416,6 +430,7 @@ receiverData = [{
     }
 }, {
     "model": "HR22",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -428,6 +443,7 @@ receiverData = [{
     }
 }, {
     "model": "HR23",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -440,6 +456,7 @@ receiverData = [{
     }
 }, {
     "model": "HR24",
+    "CCK": true,
     "compatible": {
         1: true,
         2: true,
@@ -464,6 +481,7 @@ receiverData = [{
     }
 }, {
     "model": "R16",
+    "CCK": true,
     "compatible": {
         1: false,
         2: false,
