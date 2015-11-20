@@ -394,3 +394,11 @@ h5 + h5 {
 .connectionList li:hover img {
 	display: block;
 }
+
+.floatBreak {
+	clear: both;
+}
+
+.tenPin {
+	margin-top: -34px;
+}

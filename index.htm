@@ -139,21 +139,22 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))" class="conBorder">
+                                    <b>{{no + 1}}. </b>
+                                    <div ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))" class="conBorder floatBreak tenPin">
                                         <div class="easyzoom easyzoom--adjacent" zoom>
                                             <a href="img/10-pin.jpg">
                                                 <img src="img/10-pin.jpg" />
                                             </a>
                                         </div>
                                     </div>
-                                    <div ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))" class="conBorder">
+                                    <div ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))" class="conBorder tenPin">
                                         <div class="easyzoom easyzoom--adjacent" zoom>
                                             <a href="img/10-pin-port.jpg">
                                                 <img src="img/10-pin-port.jpg" />
                                             </a>
                                         </div>
                                     </div>
-                                    <b>{{no + 1}}. </b><p><span compile="step | convert:instructionLegend"></span><span ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span></p>
+                                    <p><span compile="step | convert:instructionLegend"></span><span ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span></p>
                                 </div>
                                 <div ng-repeat="(no, note) in item.notes track by $index" class="instructions">
                                     <div class="conBorder"></div>
