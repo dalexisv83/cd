@@ -139,7 +139,21 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <b>{{no + 1}}. </b><p><span compile="step | convert:instructionLegend"></span><span ng-if="optionSel.compatible[3] && (item.connection == 2 || (item.connection == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span></p>
+                                    <div ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))" class="conBorder">
+                                        <div class="easyzoom easyzoom--adjacent" zoom>
+                                            <a href="img/10-pin.jpg">
+                                                <img src="img/10-pin.jpg" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))" class="conBorder">
+                                        <div class="easyzoom easyzoom--adjacent" zoom>
+                                            <a href="img/10-pin-port.jpg">
+                                                <img src="img/10-pin-port.jpg" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <b>{{no + 1}}. </b><p><span compile="step | convert:instructionLegend"></span><span ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span></p>
                                 </div>
                                 <div ng-repeat="(no, note) in item.notes track by $index" class="instructions">
                                     <div class="conBorder"></div>
@@ -204,7 +218,7 @@
                                     </div>
                                 </div><!--
                              --><div class="grid__item one-whole">
-                                    <span class="step-{{$index + 1}}" ng-repeat="connection in portfolioItem.connection track by $index">{{connection | convert:connectionLegend}}<span ng-if="optionSel.compatible[3] && (connection == 2 || (connection == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span><span ng-if="!$last"> + </span></span>
+                                    <span class="step-{{$index + 1}}" ng-repeat="connection in portfolioItem.connection track by $index">{{connection | convert:connectionLegend}}<span ng-if="optionSel.compatible[3] && $first && (connection == 2 || (connection == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span><span ng-if="!$last"> + </span></span>
                                 </div>
                             </div>
                         </div>
