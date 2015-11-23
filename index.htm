@@ -50,7 +50,7 @@
                     </li>
                     <li class="no-decoration" ng-repeat="tech in deviceArray | orderBy">
                         <label>
-                            <input type="checkbox" ng-model="tech.on" />{{tech.name | convert:deviceLegend}}
+                            <input type="checkbox" ng-model="tech.on" /><span>{{tech.name | convert:deviceLegend}}</span>
                         </label>
                     </li>
                 </ul>
