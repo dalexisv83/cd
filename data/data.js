@@ -33,7 +33,7 @@ notesLgnd = {
     3: "Cycle audio source on {{item.device[0] | convert:deviceLegend}} to appropriate input",
     4: "Cycle audio source on {{item.device[1] | convert:deviceLegend}} to appropriate input",
     5: "Note: Use ARC* HDMI if possible. Both TV and {{item.device[1] | convert:deviceLegend}} must be labeled \"ARC\" to work. TV will stay on HDMI ARC input, customer will cycle inputs on Audio Receiver to access all their device(s)",
-    6: "If {{item.device[1] | convert:deviceLegend}} is not <a href='http://agentanswercenter.directv.com/en-us/res/programming/hdcp_copyright_prevents_viewing.html' target='_blank'>HDCP compliant</a>, connect device with component cables."
+    6: "If {{item.device[1] | convert:deviceLegend}} is not <a href=\"http://agentanswercenter.directv.com/en-us/res/programming/hdcp_copyright_prevents_viewing.html\" target=\"_blank\">HDCP compliant</a>, connect device with component cables."
 }
 
 data = [{
