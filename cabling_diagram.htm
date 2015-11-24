@@ -86,8 +86,8 @@
                                             <div class="rec" ng-class="{'recSelected': optionSel.model}">
                                                 <span ng-if="!optionSel.model">Select receiver model</span>
                                                 <div ng-if="optionSel.model" class="easyzoom easyzoom--adjacent" zoom>
-                                                    <a ng-href="%%pub%%system/img/{{optionSel.model | lowercase}}.jpg">
-                                                        <img ng-if="optionSel.model" ng-src="%%pub%%system/img/{{optionSel.model | lowercase}}.jpg" data-large="%%pub%%system/img/{{optionSel.model | lowercase}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
+                                                    <a ng-href="%%pub%%system/img/cd-{{optionSel.model | lowercase}}.jpg">
+                                                        <img ng-if="optionSel.model" ng-src="%%pub%%system/img/cd-{{optionSel.model | lowercase}}.jpg" />
                                                     </a>
                                                 </div>
                                                 <h4 class="devLabel" ng-bind="optionSel.model | ternary:'DIRECTV'"></h4>
@@ -230,4 +230,8 @@
     </div>
     </div>
     <!-- End controller -->
+
+        <input type="hidden" id="tool-author-id" value="David Velasquez">
+        <!-- START OF SmartSource Data Collector TAG -->
+        <script src="%%pub%%system/js/webtrends.js" type="text/javascript"></script>
 </body>
