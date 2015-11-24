@@ -248,7 +248,7 @@ input[type="checkbox"] + span:hover {
 
 .devices .tv {
 	height: 76px;
-    background-image: url('../img/tv-icon.png');
+    background-image: url('%%pub%%system/img/tv-icon.png');
 }
 
 .devices .tv span {
@@ -265,7 +265,7 @@ h4.devLabel {
 }
 
 .rec {
-    background-image: url('../img/rec-icon.png');
+    background-image: url('%%pub%%system/img/rec-icon.png');
 }
 
 .modal .rec {
@@ -282,15 +282,15 @@ h4.devLabel {
 }
 
 .vcr {
-    background-image: url('../img/vcr-icon.png');
+    background-image: url('%%pub%%system/img/vcr-icon.png');
 }
 
 .blu-ray-dvd {
-    background-image: url('../img/blu-ray-dvd-icon.png');
+    background-image: url('%%pub%%system/img/blu-ray-dvd-icon.png');
 }
 
 .devices .sound-bar {
-    background-image: url('../img/sound-bar-icon.png');
+    background-image: url('%%pub%%system/img/sound-bar-icon.png');
     color: #838383;
 }
 
@@ -299,7 +299,7 @@ h4.devLabel {
 }
 
 .audio-receiver {
-    background-image: url('../img/audio-receiver-icon.png');
+    background-image: url('%%pub%%system/img/audio-receiver-icon.png');
 }
 
 .modal .devices div .helper {
@@ -406,3 +406,7 @@ h5 + h5 {
 .tenPin {
 	margin-top: -34px;
 }
+
+/*for tridion bug
+//console.log('<>');
+*/
