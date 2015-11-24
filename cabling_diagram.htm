@@ -6,22 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
     <title>Cabling Diagram</title>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="/js/matchmedia.polyfill.js"></script>
+    <script type="text/javascript" src="%%pub%%system/js/matchmedia.polyfill.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/angular.js"></script>
-    <script type="text/javascript" src="http://agentanswercenter.directv.com/en-us/res/system/js/jquery-aacDEV.js"></script>
-    <script type="text/javascript" src="js/easyzoom.js"></script>
+    <script type="text/javascript" src="%%pub%%system/js/angular.js"></script>
+    <script type="text/javascript" src="%%pub%%system/js/jquery-aacDEV.js"></script>
+    <script type="text/javascript" src="%%pub%%system/js/easyzoom.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
     <script type="text/javascript" src="js/class.js"></script>
     <script type="text/javascript" src="data/data.js"></script>
-    <link rel="stylesheet" type="text/css" href="style/csswizardry-grids/csswizardry-grids.css">
-    <link rel="stylesheet" type="text/css" href="style/easyzoom.css" />
+    <link rel="stylesheet" type="text/css" href="style/csswizardry-grids.css">
+    <link rel="stylesheet" type="text/css" href="%%pub%%system/css/easyzoom.css" />
     <link rel="stylesheet" type="text/css" href="style/style.css" />
     <link rel="stylesheet" type="text/css" href="style/lines.css" />
     <!--[if lt IE 9]>
-    <script src="http://agentanswercenter.directv.com/en-us/res/system/js/PIE.js"></script>
-    <script type="text/javascript" src="js/respond.js"></script>
+    <script src="%%pub%%system/js/PIE.js"></script>
+    <script type="text/javascript" src="%%pub%%system/js/respond.min.js"></script>
     <![endif]-->
 </head>
 
@@ -30,7 +30,7 @@
         <div class="grid">
         	<div class="header">
 	        	<div class="grid__item one-half">
-	        		<img src="http://agentanswercenter.directv.com/en-us/res/system/img/Logo_DTV_ATT.png">
+	        		<img src="%%pub%%system/img/Logo_DTV_ATT.png">
 	            </div>
 	            <div class="grid__item one-half">
 	                <h1 class="tool-title">Cabling Diagram</h1>
@@ -59,7 +59,7 @@
                     <li ng-repeat="tech in connectionArray | orderBy: 'name' | matchReceiverConnections:optionSel">
                         <label>
                             <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" /><span ng-class="{'disabled': tech.disabled}">{{tech.name | convert:connectionLegend}}</span><span ng-if="optionSel.compatible[3] && (tech.name == 2 || (tech.name == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span>
-                            <img class="easyzoom-flyout" ng-src="img/{{tech.name | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" />
+                            <img class="easyzoom-flyout" ng-src="%%pub%%system/img/{{tech.name | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" />
                         </label>
                     </li>
                 </ul>
@@ -77,8 +77,8 @@
                                         <div class="grid__item three-fifths devices">
                                             <div class="tv">
                                                 <div class="easyzoom easyzoom--adjacent" zoom>
-                                                    <a href="img/tv.jpg">
-                                                        <img src="img/tv.jpg" />
+                                                    <a href="%%pub%%system/img/tv.jpg">
+                                                        <img src="%%pub%%system/img/tv.jpg" />
                                                     </a>
                                                 </div>
                                                 <h4 class="devLabel">TV</h4>
@@ -86,16 +86,16 @@
                                             <div class="rec" ng-class="{'recSelected': optionSel.model}">
                                                 <span ng-if="!optionSel.model">Select receiver model</span>
                                                 <div ng-if="optionSel.model" class="easyzoom easyzoom--adjacent" zoom>
-                                                    <a href="img/{{optionSel.model | lowercase}}.jpg">
-                                                        <img ng-if="optionSel.model" ng-src="img/{{optionSel.model | lowercase}}.jpg" data-large="img/{{optionSel.model | lowercase}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
+                                                    <a ng-href="%%pub%%system/img/{{optionSel.model | lowercase}}.jpg">
+                                                        <img ng-if="optionSel.model" ng-src="%%pub%%system/img/{{optionSel.model | lowercase}}.jpg" data-large="%%pub%%system/img/{{optionSel.model | lowercase}}.jpg" magnify="zoomrange: [4,5], magnifiersize: [150, 150]" />
                                                     </a>
                                                 </div>
                                                 <h4 class="devLabel" ng-bind="optionSel.model | ternary:'DIRECTV'"></h4>
                                             </div>
                                             <div ng-repeat="device in item.device | orderBy" class="{{device | convert:deviceLegend | lowercase | spcToHyphen}}">
                                                 <div class="easyzoom easyzoom--adjacent" zoom>
-                                                    <a href="img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg">
-                                                        <img ng-src="img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg"  />
+                                                    <a ng-href="%%pub%%system/img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg">
+                                                        <img ng-src="%%pub%%system/img/{{device | convert:deviceLegend | lowercase | spcToHyphen}}.jpg"  />
                                                     </a>
                                                 </div>
                                                 <h4 class="devLabel" ng-bind="device | convert:deviceLegend"></h4>
@@ -110,13 +110,13 @@
                                             'up': {{setup[0]}} > {{setup[1]}},
                                             'down': {{setup[1]}} > {{setup[0]}}
                                             }">
-                                                <img class="horz" ng-src="img/{{$index + 1}}-{{setup[0]}}-3x.png" />
-                                                <img class="horz" ng-src="img/{{$index + 1}}-{{setup[1]}}-3x.png" />
+                                                <img class="horz" ng-src="%%pub%%system/img/{{$index + 1}}-{{setup[0]}}-3x.png" />
+                                                <img class="horz" ng-src="%%pub%%system/img/{{$index + 1}}-{{setup[1]}}-3x.png" />
                                                 <div class="vert">
-                                                    <img ng-src="img/{{$index + 1}}-0-3x.png" />
+                                                    <img ng-src="%%pub%%system/img/{{$index + 1}}-0-3x.png" />
                                                 </div>
                                                 <div class="arrow">
-                                                    <img ng-src="img/{{$index + 1}}-a-3x.png" />
+                                                    <img ng-src="%%pub%%system/img/{{$index + 1}}-a-3x.png" />
                                                 </div>
                                             </div>
                                         </div><!--
@@ -127,30 +127,30 @@
                                 <div ng-repeat="(no, step) in item.instructions track by $index" class="instructions step-{{no + 1}}">
                                     <div class="conBorder">
                                         <div class="easyzoom easyzoom--adjacent" zoom>
-                                            <a href="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg">
-                                                <img ng-src="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg"/>
+                                            <a ng-href="%%pub%%system/img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg">
+                                                <img ng-src="%%pub%%system/img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}.jpg"/>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="conBorder">
                                         <div class="easyzoom easyzoom--adjacent" zoom>
-                                            <a href="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}-port.jpg">
-                                                <img ng-src="img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}-port.jpg" />
+                                            <a ng-href="%%pub%%system/img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}-port.jpg">
+                                                <img ng-src="%%pub%%system/img/{{item.connection[no] | convert:connectionLegend | lowercase | spcToHyphen}}-port.jpg" />
                                             </a>
                                         </div>
                                     </div>
                                     <b>{{no + 1}}. </b>
                                     <div ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))" class="conBorder floatBreak tenPin">
                                         <div class="easyzoom easyzoom--adjacent" zoom>
-                                            <a href="img/10-pin.jpg">
-                                                <img src="img/10-pin.jpg" />
+                                            <a href="%%pub%%system/img/10-pin.jpg">
+                                                <img src="%%pub%%system/img/10-pin.jpg" />
                                             </a>
                                         </div>
                                     </div>
                                     <div ng-if="optionSel.compatible[3] && $first && (item.connection[no] == 2 || (item.connection[no] == 4 && optionSel.model != 'H25'))" class="conBorder tenPin">
                                         <div class="easyzoom easyzoom--adjacent" zoom>
-                                            <a href="img/10-pin-port.jpg">
-                                                <img src="img/10-pin-port.jpg" />
+                                            <a href="%%pub%%system/img/10-pin-port.jpg">
+                                                <img src="%%pub%%system/img/10-pin-port.jpg" />
                                             </a>
                                         </div>
                                     </div>
@@ -169,7 +169,7 @@
                                 <div ng-if="(optionSel.CCK) || (!optionSel)" class="instructions">
                                     <div class="conBorder"></div>
                                     <div class="conBorder"></div>
-                                    <p><span>If receiver needs to be connected to the internet, refer to <a href="http://agentanswercenter.directv.com/en-us/res/rover_tools/cckw_deca/cckw_deca.htm" target="_blank">CCK-W/DECA Tool</a></span></p>
+                                    <p><span>If receiver needs to be connected to the internet, refer to <a href="http://agentanswercenter.directv.com/en-us/res/rover_tools/redirectors/CCK-W_DECA_redirect.html" target="_blank">CCK-W/DECA Tool</a></span></p>
                                 </div>
                             </div>
                         </div>
@@ -208,13 +208,13 @@
                                     'up': {{setup[0]}} > {{setup[1]}},
                                     'down': {{setup[1]}} > {{setup[0]}}
                                     }">
-                                        <img class="horz" ng-src="img/{{$index + 1}}-{{setup[0]}}.png" />
-                                        <img class="horz" ng-src="img/{{$index + 1}}-{{setup[1]}}.png" />
+                                        <img class="horz" ng-src="%%pub%%system/img/{{$index + 1}}-{{setup[0]}}.png" />
+                                        <img class="horz" ng-src="%%pub%%system/img/{{$index + 1}}-{{setup[1]}}.png" />
                                         <div class="vert">
-                                            <img ng-src="img/{{$index + 1}}-0.png" />
+                                            <img ng-src="%%pub%%system/img/{{$index + 1}}-0.png" />
                                         </div>
                                         <div class="arrow">
-                                            <img ng-src="img/{{$index + 1}}-a.png" />
+                                            <img ng-src="%%pub%%system/img/{{$index + 1}}-a.png" />
                                         </div>
                                     </div>
                                 </div><!--
