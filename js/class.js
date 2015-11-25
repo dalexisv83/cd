@@ -1,60 +1,65 @@
 pushUnique = function(item, array) {
+    'use strict';
     if ((item != "") && (jQuery.inArray(item, array) == -1)) {
         array.push(item);
         return true;
     }
     return false;
-}
+};
 
 unique = function (list) {
+    'use strict';
     var result = [];
     $.each(list, function(i, e) {
-        if ($.inArray(e, result) == -1) result.push(e);
+        if ($.inArray(e, result) == -1) {
+            result.push(e);
+        }
     });
     return result;
-}
+};
 
 getConnections = function(data) {
+    'use strict';
     var oneEach = [];
     var arr = [];
-    for (var n in data) {
-        for (var k in data[n]["connection"]) {
-            pushUnique(data[n]["connection"][k], oneEach);
+    for (n in data) {
+        for (k in data[n].connection) {
+            pushUnique(data[n].connection[k], oneEach);
         }
     }
-    for (var u in oneEach) {
-        var techObject = {
+    for (u in oneEach) {
+        arr[u] = {
             name: oneEach[u],
             disabled: false,
             on: false
         };
-        arr.push(techObject);
     }
     return arr;
-}
+};
 
 getDevices = function(data) {
+    'use strict';
     var oneEach = [];
     var arr = [];
-    for (var n in data) {
-        for (var k in data[n]["device"]) {
-            pushUnique(data[n]["device"][k], oneEach);
+    for (n in data) {
+        for (k in data[n].device) {
+            pushUnique(data[n].device[k], oneEach);
         }
     }
-    for (var u in oneEach) {
-        var techObject = {
+    for (u in oneEach) {
+        arr[u] = {
             name: oneEach[u],
             disabled: false,
             on: false
         };
-        arr.push(techObject);
     }
     return arr;
-}
+};
 
 getCheckedConnections = function(connections) {
+    'use strict';
     var checked = [];
-    for (var t in connections) {
+    for (t in connections) {
         if (connections[t].on === true) {
             pushUnique(connections[t].name, checked);
         }
@@ -63,8 +68,9 @@ getCheckedConnections = function(connections) {
 };
 
 getDisabledConnections = function(connections) {
+    'use strict';
     var disabled = [];
-    for (var t in connections) {
+    for (t in connections) {
         if (connections[t].disabled === true) {
             pushUnique(connections[t].name, disabled);
         }
@@ -73,8 +79,9 @@ getDisabledConnections = function(connections) {
 };
 
 getCheckedDevices = function(devices) {
+    'use strict';
     var checked = [];
-    for (var t in devices) {
+    for (t in devices) {
         if (devices[t].on === true) {
             pushUnique(devices[t].name, checked);
         }
