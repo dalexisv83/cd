@@ -10,6 +10,8 @@ When a diagram is chosen, a detailed view (3x) is displayed which includes instr
 
 ## Datasource
 
+### Diagrams
+
 Each diagram can be described by several attributes which are stored as JSON properties.
 
 ```json
@@ -19,6 +21,7 @@ Each diagram can be described by several attributes which are stored as JSON pro
   "device":         // array
   "setup":          // array - two dimensional
   "instructions":   // array
+  "notes":          // array
 }
 ```
 
@@ -55,7 +58,19 @@ Each diagram can be described by several attributes which are stored as JSON pro
       - The first index of the array takes position three in the diagram amd so forth
         - Ex: `[2,4]` which translates to `['Blu-ray/DVD', 'Audio Receiver']` with TV in position one, DIRECTV Receiver in position two, Blu-ray/DVD in position three, and Audio Receiver in position four
   - **Setup**
+    - The `setup` property describes each pair of connections between two device positions in a diagram
+    - Each `setup` pair is stored in the datasource in a two dimensional array
+      - The first dimension index corresponds to same index of the `instruction` array
+      - The second dimension describes the two device positions that are being connected in that particular `instruction`
+    - The device position pairings are stored as an array ordered from A/V source to destination
+      - This allows Cabling Diagram to dynamically rotate the arrow for each connection accordingly
+        - If the source device is physically above the destination, the arrow will point down
+        - The top position in each diagram is Position One, with Position Two just below, therefore if the numerical value of the source position is greater than the destination, the source device is positioned lower in the diagram, and the arrow will point upward to the destination device
   - **Instructions**
   - **Notes**
+  - **Detail**
+    - The `detail` property is a true false flag which displays or hides the detailed view of a diagram.
 
-The `detail` property is a true false flag which displays or hides the detailed view of a diagram.
+### DIRECTV Receivers
+
+### Legends
