@@ -1,121 +1,124 @@
-(function(angular) {
-    'use strict';
+(function(angular) {    
+    'use strict';     
     var cablingDiagram = angular.module('cablingDiagram', [], function($compileProvider) {
-    // configure new 'compile' directive by passing a directive
-    // factory function. The factory function injects the '$compile'
-    $compileProvider.directive('compile', function($compile) {
-        // directive factory creates a link function
-        return function(scope, element, attrs) {
-            scope.$watch(
-                function(scope) {
-                    // watch the 'compile' expression for changes
-                    return scope.$eval(attrs.compile);
-                },
-                function(value) {
-                    // when the 'compile' expression changes
-                    // assign it into the current DOM
-                    element.html(value);
+        // configure new 'compile' directive by passing a directive
+        // factory function. The factory function injects the '$compile'
+        $compileProvider.directive('compile', function($compile) {
+            // directive factory creates a link function
+            return function(scope, element, attrs) {
+                scope.$watch(
+                    function(scope) {
+                        // watch the 'compile' expression for changes
+                        return scope.$eval(attrs.compile);
+                    },
+                    function(value) {
+                        // when the 'compile' expression changes
+                        // assign it into the current DOM
+                        element.html(value);
 
-                    // compile the new DOM and link it to the current
-                    // scope.
-                    // NOTE: we only compile .childNodes so that
-                    // we don't get into infinite loop compiling ourselves
-                    $compile(element.contents())(scope);
-                }
-            );
-        };
+                        // compile the new DOM and link it to the current
+                        // scope.
+                        // NOTE: we only compile .childNodes so that
+                        // we don't get into infinite loop compiling ourselves
+                        $compile(element.contents())(scope);
+                    }
+                );
+            };
+        });
     });
-});
+    
+    //filters
     cablingDiagram.filter('matchConnections', function() {
-        return function(a, origArr) {
-            var checkedArr = getCheckedConnections(origArr);
-            if (checkedArr.length < 1)
-                return a;
-            var c = JSON.stringify(checkedArr);
-            var matches = [];
-            angular.forEach(a, function(value, key) {
+        return function(items, origArr) {
+            var checkedArr = getDataStatus(origArr,'on'),
+            json_str,            
+            matches = [];    
+            if (checkedArr.length < 1){
+                return items;
+            }            
+            json_str = JSON.stringify(checkedArr);
+             /*jslint unparam: true*/
+            angular.forEach(items, function(value, key) {
                 value.connection.sort();
-                var b = JSON.stringify(unique(value.connection));
-                if (b == c)
+                var json_str_conn = JSON.stringify(unique(value.connection));
+                if (json_str_conn === json_str){
                     matches.push(value);
-            })
+                }
+            });
+            
             return matches;
         };
-    })
-    cablingDiagram.filter('removeDisabled', function() {
-        return function(a, origArr) {
-            var disabledArr = getDisabledConnections(origArr);
-            if (disabledArr.length < 1)
-                return a;
-            var matches = [];
-            angular.forEach(a, function(value, key) {
-                        if (!anyMatchInArray(value.connection, disabledArr))
-                            pushUnique(value, matches);
-                })
-            return matches;
-        };
-    })
-    cablingDiagram.filter('matchDevices', function() {
-        return function(a, origArr) {
-            var checkedArr = getCheckedDevices(origArr);
-            // if (checkedArr.length < 1)
-            //     return a;
-            checkedArr.sort();
-            var c = JSON.stringify(checkedArr);
-            var matches = [];
-            angular.forEach(a, function(value, key) {
-                value.device.sort();
-                var b = JSON.stringify(value.device);
-                if (b == c)
-                    matches.push(value);
-            })
-            return matches;
-        };
-    })
-    cablingDiagram.filter('matchReceiverConnections', function() {
-        return function(a, optSel) {
-            if ((optSel == "") || (optSel == undefined)) {
-                angular.forEach(a, function(value, key) {
-                    value.disabled = false;
-                })
-                return a;
+    }).filter('removeDisabled', function() {
+        return function(items, origArr) {
+            var disabledArr = getDataStatus(origArr,'disabled'),
+            matches = [];        
+            if (disabledArr.length < 1){
+                return items;
             }
-            var c = optSel.compatible;
-            angular.forEach(a, function(value, key) {
+            /*jslint unparam: true*/
+            angular.forEach(items, function(value, key) {
+                if (!anyMatchInArray(value.connection, disabledArr)){
+                    pushUnique(value, matches);
+                }
+            });
+            return matches;
+        };
+    }).filter('matchDevices', function() {
+        return function(items, origArr) {
+            var checkedArr = getDataStatus(origArr,'on'),
+            json_str,
+            matches = [];
+            checkedArr.sort();            
+            json_str = JSON.stringify(checkedArr);  
+             /*jslint unparam: true*/
+            angular.forEach(items, function(value, key) {
+                value.device.sort();
+                var json_str_device = JSON.stringify(value.device);
+                if (json_str_device === json_str){
+                    matches.push(value);
+                }
+            });
+            return matches;
+        };
+    }).filter('matchReceiverConnections', function() {
+        return function(items, optSel) {
+            if ((optSel === "") || (optSel === undefined)) {
+                 /*jslint unparam: true*/
+                angular.forEach(items, function(value, key) {
+                    value.disabled = false;
+                });
+                return items;
+            }
+            var compatibles = optSel.compatible;
+            angular.forEach(items, function(value, key) {
                 value.disabled = false;
-                if (c[value.name] != true) {
+                if (compatibles[value.name] !== true) {
                     value.disabled = true;
                     value.on = false; // unchecks disabled connections. Maybe filter should ignore and keep users input?
                 }
-            })
-            return a;
+            });
+            return items;
         };
-    })
-    cablingDiagram.filter('spcToHyphen', function() {
+    }).filter('spcToHyphen', function() {
         return function(input) {
             if (input) {
                 return input.replace(/\s+/g, '-').replace("(", '').replace(")", '').replace("/", '-');
             }
-        }
-    })
-    cablingDiagram.filter('convert', function() {
+        };
+    }).filter('convert', function() {
         return function(input, obj) {
             if (input) {
                 return obj[input];
             }
-        }
-    })
-    cablingDiagram.filter('ternary', function() {
+        };
+    }).filter('ternary', function() {
         return function(input, ifNot) {
             if (input) {
                 return input;
-            } else {
-                return ifNot;
-            }
-        }
-    })
-    cablingDiagram.directive("ngWindowPie", ['$timeout', function($timeout) {
-        'use strict';
+            } 
+            return ifNot;            
+        };
+    }).directive("ngWindowPie", ['$timeout', function($timeout) {       
         /*jslint unparam: true*/
         return function(scope, element, attrs) {
             if (window.PIE) {
@@ -124,30 +127,19 @@
                 });
             }
         };
-    }])
-    // cablingDiagram.directive('magnify', function() {
-    //     return {
-    //         restrict: 'A',
-    //         link: function(scope, element, attrs) {
-    //             if (jQuery.fn.imagezoomsl) {
-    //                 attrs.magnify = "magnifiereffectanimate: 'fadeIn', " + attrs.magnify;
-    //                 var props = eval('({' + attrs.magnify + '})');
-    //                 $(element).imagezoomsl(props);
-    //             }
-    //         }
-    //     };
-    // });
-    cablingDiagram.directive('zoom', function() {
+    }]).directive('zoom', function() {
+        /*jslint unparam: true*/
         return {
-            restrict: 'A',
+            restrict: 'A',            
             link: function(scope, element, attrs) {
+                 /*jslint unparam: true*/
                 if (jQuery.prototype.easyZoom) {
                     // Instantiate EasyZoom plugin
                     var $easyzoom = $(element).easyZoom();
-                    // Get the instance API
-                    var api = $easyzoom.data(element);
+                    // Get the instance API                   
+                    $easyzoom.data(element);
                 }
             }
         };
     });
-})(window.angular);
+}(window.angular));

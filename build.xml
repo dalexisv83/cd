@@ -85,10 +85,10 @@
 	
 	<target name="jslint">
 		<jslint options="white,nomen,regexp" haltOnFailure="true">
-			<predef>screen,_,$$scope,$$,app,data,angular,DataStore,UrlFormatter,Utility,document,ToolTip,CommentBtn,jQuery,window,localhost, min_limit, max_limit, dcsMultiTrack, flows_app, location,popLink</predef>
+			<predef>notesLgnd,instructionLgnd,connectionLgnd,deviceLgnd,receiverData,getData, pushUnique,anyMatchInArray, unique, getDataStatus,screen,_,$$scope,$$,app,data,angular,DataStore,UrlFormatter,Utility,document,ToolTip,CommentBtn,jQuery,window,localhost, min_limit, max_limit, dcsMultiTrack, flows_app, location,popLink</predef>
 			<formatter type="plain" />
 			<formatter type="xml" destfile="${build.dir}/test-reports/jslint.xml" />
-			<fileset dir="${basedir}" includes="**/*.js" excludes="**/system/datasource/data.js, **/unit_test/*.js" />
+			<fileset dir="${basedir}" includes="**/*.js" excludes="**/system/data/data.js, **/unit_test/*.js, **/js/easyzoom.js,**/js/matchmedia.polyfill.js,**/js/respond.js" />
 		</jslint>
 	</target>
 	
@@ -106,12 +106,15 @@
 	<target name="concat">
 		<echo message="Building ${final_js}" />
 		<concat destfile="${final_js}" force="true" fixlastline="true">
-			<fileset dir="${build.dir}" includes="**/*.js" />                       
+			<fileset dir="${build.dir}" includes="**/*.js" />
+                        <fileset file="${build.dir}/js/class-min.js" />			
+			<fileset file="${build.dir}/js/app-min.js" />	                       
+			<fileset file="${build.dir}/js/controller-min.js" />	                       
                 </concat>		
 		<echo message="Building ${final_css}" />
 		<concat destfile="${final_css}" force="true" fixlastline="true">
 			<fileset dir="${build.dir}" includes="**/*.css" />
-			
+                        <fileset dir="${build.dir}" includes="**/style/*.css" />			
 		</concat>		
 	</target>
 	
@@ -124,8 +127,8 @@
 	<target name="optimizeImages">
 	   <exec command='cmd /c "${image_optimization.dir}\optipng\optipng.exe" optipng ${build.dir}/img/*.png' />
 	   <exec command='forfiles -p ${build.dir} -s -m *.jpg /C "cmd /c ${image_optimization.dir}\jpegtran\jpegtran.exe -optimize @file @file"' />
-	</target>
-	
+	</target>        
+       
 	
 	<target name="addBuildNumber">
 	    <replaceregexp flags="g" file="${build.dir}/index.htm" match="#.*#" replace="${env.BUILD_NUMBER}" />
@@ -136,6 +139,6 @@
 	<target name="clean">	
 	</target>
 	
-	<target name="main" depends="start,copy,optimizeImages,clean" />
+	<target name="main" depends="start,jslint,compress,concat,copy,optimizeImages,clean" />
 	
 </project>

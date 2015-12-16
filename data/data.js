@@ -1,11 +1,11 @@
-deviceLgnd = {
+var deviceLgnd = {
 	3: "VCR",
 	4: "Blu-ray/DVD",
 	5: "Sound Bar",
 	6: "Audio Receiver"
-}
+};
 
-connectionLgnd = {
+var connectionLgnd = {
 	1: "HDMI",
 	2: "Component",
 	3: "10-Pin Mini Din",
@@ -13,10 +13,10 @@ connectionLgnd = {
 	5: "S-Video",
 	6: "Coaxial",
 	7: "Digital Audio (Optical)",
-	8: "Digital Coax Audio",
-}
+	8: "Digital Coax Audio"
+};
 
-instructionLgnd = {
+var instructionLgnd = {
     1: "Connect {{optionSel.model | ternary:'DIRECTV'}} to TV with {{item.connection[no] | convert:connectionLegend}} cable",
     2: "Connect {{item.device[0] | convert:deviceLegend}} to TV with {{item.connection[no] | convert:connectionLegend}} cable",
     3: "Connect TV to {{item.device[0] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable",
@@ -24,19 +24,19 @@ instructionLgnd = {
     5: "Connect {{optionSel.model | ternary:'DIRECTV'}} to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable",
     6: "Connect {{item.device[0] | convert:deviceLegend}} to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable",
     7: "Connect {{item.device[1] | convert:deviceLegend}} to TV with {{item.connection[no] | convert:connectionLegend}} cable",
-    8: "Connect TV to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable",
-}
+    8: "Connect TV to {{item.device[1] | convert:deviceLegend}} with {{item.connection[no] | convert:connectionLegend}} cable"
+};
 
-notesLgnd = {
+var notesLgnd = {
     1: "Cycle video source on TV to appropriate input.",
     2: "Note: VCR may need to be on for satellite signal to be view on TV. {{optionSel.model | ternary:'DIRECTV'}} and VCR will share same input.",
     3: "Cycle audio source on {{item.device[0] | convert:deviceLegend}} to appropriate input",
     4: "Cycle audio source on {{item.device[1] | convert:deviceLegend}} to appropriate input",
     5: "Note: Use ARC* HDMI if possible. Both TV and {{item.device[1] | convert:deviceLegend}} must be labeled \"ARC\" to work. TV will stay on HDMI ARC input, customer will cycle inputs on Audio Receiver to access all their device(s)",
     6: "If {{item.device[1] | convert:deviceLegend}} is not <a href=\"http://agentanswercenter.directv.com/en-us/res/programming/hdcp_copyright_prevents_viewing.html\" target=\"_blank\">HDCP compliant</a>, connect device with component cables."
-}
+};
 
-data = [{
+var data = [{
     "detail": false,
     "connection": [6],
     "device": [],
@@ -232,9 +232,9 @@ data = [{
     "setup": [[2,1], [2,4], [3,1], [3,4], [1,4]],
     "instructions": [1,5,2,6,8],
     "notes": [1,4]
-}]
+}];
 
-receiverData = [{
+var receiverData = [{
     "model": "D11",
     "compatible": {
         1: false,
@@ -517,17 +517,4 @@ receiverData = [{
         7: true,
         8: true
     }
-}//, {
-//     "model": "HG1X",
-//     "compatible": {
-//         1: true,
-//         2: true,
-//         3: false,
-//         4: true,
-//         5: true,
-//         6: false,
-//         7: true,
-//         8: true
-//     }
-//}
-]
+}];
