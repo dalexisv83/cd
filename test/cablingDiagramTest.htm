@@ -10,51 +10,63 @@
     <script type="text/javascript" src="../controller/controller.js"></script>
     <script src="//code.jquery.com/qunit/qunit-1.19.0.js"></script>
     <script type="text/javascript" src="../data/data.js"></script>
-    <script src="../class/class.js"></script>
+    <script src="../js/class.js"></script>
     <script type="text/javascript">
-    
-	var ctrl, ctrlScope, service_locator, filters;
-	module("Testing controller", {
-	    setup: function () {
-		angular.module('cablingDiagram');
-		service_locator = angular.injector(['ng', 'cablingDiagram']);
-	    
-		ctrlScope = service_locator.get('$rootScope').$new();
-		
-		filters = service_locator.get("$filter");
-	      
-	    },
-	    teardown: function () {
-		
-	    }
-	});
-	
-	
-	
-	QUnit.test("pushUnique", function(assert) {
-	    
-	    console.log(filters('matchChecked'));
-	    
-	    var testArray = ["hello"];
-	    var testItem = "world";
-	    assert.equal(pushUnique(testItem, testArray), true);
-    
-	    var testItem = "hello";
-	    assert.equal(pushUnique(testItem, testArray), false);
-    
-	    var testItem = "";
-	    assert.equal(pushUnique(testItem, testArray), false);
-	    
-	})
-    
-	QUnit.test("getChecked", function(assert) {
-	    var connectionsTest = [{"name":"David", "on":true}, {"name":"Cloud", "on":false}];
-	    assert.equal(getChecked(connectionsTest), "David");
-    
-	    var connectionsTest = [{name:"David", on:true}, {name:"Cloud", on:false}, {name:"Jose", on:1}];
-	    assert.equal(getChecked(connectionsTest), "David");
-	})
-	
+    var ctrl, ctrlScope, service_locator, filters;
+    module("Testing controller", {
+        setup: function() {
+            angular.module('cablingDiagram');
+            service_locator = angular.injector(['ng', 'cablingDiagram']);
+
+            ctrlScope = service_locator.get('$rootScope').$new();
+
+            filters = service_locator.get("$filter");
+
+        },
+        teardown: function() {
+
+        }
+    });
+
+
+
+    QUnit.test("pushUnique", function(assert) {
+
+        var testArray = ["hello"];
+        var testItem = "world";
+        assert.equal(pushUnique(testItem, testArray), true);
+
+        var testItem = "hello";
+        assert.equal(pushUnique(testItem, testArray), false);
+
+        var testItem = "";
+        assert.equal(pushUnique(testItem, testArray), false);
+
+    })
+
+    QUnit.test("getCheckedConnections", function(assert) {
+        var connectionsTest = [{
+            "name": "David",
+            "on": true
+        }, {
+            "name": "Cloud",
+            "on": false
+        }];
+        assert.deepEqual(getCheckedConnections(connectionsTest), ["David"]);
+
+        var connectionsTest = [{
+            name: "David",
+            on: true
+        }, {
+            name: "Cloud",
+            on: false
+        }, {
+            name: "Jose",
+            on: 1
+        }];
+        assert.notDeepEqual(getCheckedConnections(connectionsTest), ["Cloud"]);
+        assert.notDeepEqual(getCheckedConnections(connectionsTest), ["Jose"]);
+    })
     </script>
 </head>
 
