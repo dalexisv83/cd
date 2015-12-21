@@ -79,6 +79,10 @@ Each diagram can be described by several attributes which are stored as JSON pro
           - The second pair `[2,3]` again depicts the device in position two as the source device, however for the second instruction, position three is the destination
           - Because the source (position two) is physically higher in the diagram, the arrow points down toward position three
   - **Instructions**
+    - The `instructions` property is an array of strings which describe the connections between devices in text form.
+    - Each Instruction corresponds to a step in the diagram with a connection and two devices for each step
+    - Each Instruction has a color associated with the corresponding step
+      - Currently the first step is blue (#3b97d3), followed by red, purple, orange, and green
   - **Notes**
   - **Detail**
     - The `detail` property is a true false flag which displays or hides the detailed view of a diagram.
@@ -93,8 +97,10 @@ Each diagram can be described by several attributes which are stored as JSON pro
   - Email Fulfillment
     - CSS print stylesheet
     - "Click here to print"
-  - Better modal Solution
+  - Better modal solution
   - Cleaner grid
+  - Excel template for datasource
   - Excel to JSON parser
   - Additional unit testing
   - Jenkins automation
+  - More elegant solution for notes/caveat overlap
