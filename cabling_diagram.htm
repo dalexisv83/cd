@@ -15,6 +15,8 @@
     <script type="text/javascript" src="js/controller.js"></script>
     <script type="text/javascript" src="js/class.js"></script>
     <script type="text/javascript" src="data/data.js"></script>
+    <script src="filters/filters.js"></script>
+    <script src="filters/unique/unique.js"></script>
     <link rel="stylesheet" type="text/css" href="style/csswizardry-grids.css">
     <link rel="stylesheet" type="text/css" href="%%pub%%system/css/easyzoom.css" />
     <link rel="stylesheet" type="text/css" href="style/style.css" />
@@ -48,17 +50,17 @@
                             <input type="checkbox" checked disabled /><span>TV</span>
                         </label>
                     </li>
-                    <li class="no-decoration" ng-repeat="tech in deviceArray | orderBy">
+                    <li class="no-decoration" ng-repeat="device in devices = (deviceArray | unique:'name' | orderBy)">
                         <label>
-                            <input type="checkbox" ng-model="tech.on" /><span>{{tech.name | convert:deviceLegend}}</span>
+                            <input type="checkbox" ng-model="device.checked" /><span>{{device.name | convert:deviceLegend}}</span>
                         </label>
                     </li>
                 </ul>
                 <h2>Connections</h2>
                 <ul class="connectionList">
-                    <li ng-repeat="tech in connectionArray | orderBy: 'name' | matchReceiverConnections:optionSel">
+                    <li ng-repeat="tech in connectionArray | matchReceiverConnections:optionSel | unique:'name' | orderBy: 'name'">
                         <label>
-                            <input type="checkbox" ng-model="tech.on" ng-disabled="tech.disabled" /><span ng-class="{'disabled': tech.disabled}">{{tech.name | convert:connectionLegend}}</span><span ng-if="optionSel.compatible[3] && (tech.name == 2 || (tech.name == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span>
+                            <input type="checkbox" ng-model="tech.checked" ng-disabled="tech.disabled" /><span ng-class="{'disabled': tech.disabled}">{{tech.name | convert:connectionLegend}}</span><span ng-if="optionSel.compatible[3] && (tech.name == 2 || (tech.name == 4 && optionSel.model != 'H25'))"> via 10-Pin Mini Din</span>
                             <img class="easyzoom-flyout" ng-src="%%pub%%system/img/{{tech.name | convert:connectionLegend | lowercase | spcToHyphen}}.jpg" />
                         </label>
                     </li>

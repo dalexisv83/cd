@@ -1,6 +1,6 @@
 (function(angular) {
     'use strict';
-    var cablingDiagram = angular.module('cablingDiagram', [], function($compileProvider) {
+    var cablingDiagram = angular.module('cablingDiagram', ['cablingDiagram.filters'], function($compileProvider) {
     // configure new 'compile' directive by passing a directive
     // factory function. The factory function injects the '$compile'
     $compileProvider.directive('compile', function($compile) {
@@ -28,14 +28,14 @@
 });
     cablingDiagram.filter('matchConnections', function() {
         return function(a, origArr) {
-            var checkedArr = getCheckedConnections(origArr);
+            var checkedArr = getItemsByProperty(origArr, 'checked');
             if (checkedArr.length < 1)
                 return a;
             var c = JSON.stringify(checkedArr);
             var matches = [];
             angular.forEach(a, function(value, key) {
                 value.connection.sort();
-                var b = JSON.stringify(unique(value.connection));
+                var b = JSON.stringify(uniq_fast(value.connection));
                 if (b == c)
                     matches.push(value);
             })
@@ -44,20 +44,20 @@
     })
     cablingDiagram.filter('removeDisabled', function() {
         return function(a, origArr) {
-            var disabledArr = getDisabledConnections(origArr);
+            var disabledArr = getItemsByProperty(origArr, 'disabled');
             if (disabledArr.length < 1)
                 return a;
             var matches = [];
             angular.forEach(a, function(value, key) {
                         if (!anyMatchInArray(value.connection, disabledArr))
-                            pushUnique(value, matches);
+                            matches.push(value);
                 })
             return matches;
         };
     })
     cablingDiagram.filter('matchDevices', function() {
         return function(a, origArr) {
-            var checkedArr = getCheckedDevices(origArr);
+            var checkedArr = getItemsByProperty(origArr, 'checked');
             // if (checkedArr.length < 1)
             //     return a;
             checkedArr.sort();
