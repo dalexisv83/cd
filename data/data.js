@@ -351,6 +351,19 @@ receiverData = [{
         8: true
     }
 }, {
+    "model": "C61K",
+    "CCK": true,
+    "compatible": {
+        1: true,
+        2: false,
+        3: false,
+        4: false,
+        5: false,
+        6: false,
+        7: true,
+        8: true
+    }
+}, {
     "model": "H20",
     "CCK": true,
     "compatible": {
@@ -404,6 +417,19 @@ receiverData = [{
     }
 }, {
     "model": "H25",
+    "CCK": true,
+    "compatible": {
+        1: true,
+        2: true,
+        3: true,
+        4: true,
+        5: false,
+        6: false,
+        7: false,
+        8: true
+    }
+}, {
+    "model": "H44",
     "CCK": true,
     "compatible": {
         1: true,
@@ -504,6 +530,19 @@ receiverData = [{
         6: true,
         7: true,
         8: false
+    }
+}, {
+    "model": "R22",
+    "CCK": true,
+    "compatible": {
+        1: true,
+        2: true,
+        3: false,
+        4: true,
+        5: true,
+        6: false,
+        7: true,
+        8: true
     }
 }, {
     "model": "TiVo",
