@@ -1,0 +1,3 @@
+[submodule "filters/unique"]
+	path = filters/unique
+	url = //vwecda05.testla.testfrd.directv.com/AACDev/git/angular_filters/unique/
